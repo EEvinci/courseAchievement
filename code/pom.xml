@@ -8,9 +8,10 @@
         <version>2.4.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
-    <groupId>cn.edu.zucc</groupId>
-    <artifactId>L03SpringMVCDemo</artifactId>
+    <groupId>com.evinci</groupId>
+    <artifactId>courseAchievement</artifactId>
     <version>1.0.0</version>
 
     <dependencies> 
