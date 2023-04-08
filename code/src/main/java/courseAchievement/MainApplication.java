@@ -3,11 +3,15 @@ package courseAchievement;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author evinci
+ * @version 1.0
+ */
 @SpringBootApplication
-public class TeamworkApplication {
+public class MainApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TeamworkApplication.class, args);
+        SpringApplication.run(MainApplication.class, args);
     }
 
 }
