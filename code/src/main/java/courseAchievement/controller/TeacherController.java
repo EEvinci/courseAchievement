@@ -1,7 +1,7 @@
 package courseAchievement.controller;
 
-import courseAchievement.entity.Teacher;
-import courseAchievement.repository.TeacherRepository;
+import courseAchievement.entity.TeacherEntity;
+import courseAchievement.repository.TeacherEntityRepository;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +13,9 @@ import java.util.List;
 @RequestMapping("/teacher")
 public class TeacherController {
 
-    private final TeacherRepository repository;
+    private final TeacherEntityRepository repository;
 
-    TeacherController(TeacherRepository repository) {
+    TeacherController(TeacherEntityRepository repository) {
         this.repository = repository;
     }
 
@@ -26,10 +26,10 @@ public class TeacherController {
      * @return
      */
     @PostMapping("/queryteacherByNum/{teacherNum}")
-    public Teacher queryteacherByNum(@PathVariable("teacherNum") String teacherNum) {
-        Teacher teacher = Teacher.builder().teacherNumString(teacherNum).build(); // 创建一个老师对象
+    public TeacherEntity queryteacherByNum(@PathVariable("teacherNum") String teacherNum) {
+        TeacherEntity teacher = TeacherEntity.builder().teacherNumString(teacherNum).build(); // 创建一个老师对象
         // 查询数据库中的课程
-        List<Teacher> teacherList = repository.findByTeacherNumStringLike(teacherNum);
+        List<TeacherEntity> teacherList = repository.findByTeacherNumStringLike(teacherNum);
         // 判断是否查找到
         if (teacherList.size() == 0) {
             System.out.println("Not Found");
@@ -51,11 +51,11 @@ public class TeacherController {
      * @return
      */
     @PostMapping("/addteacher/{teacherNum}/{teacherContent}/{teacherGroupId}")
-    public Teacher addteacher(@PathVariable("teacherNum") String teacherNum,
+    public TeacherEntity addteacher(@PathVariable("teacherNum") String teacherNum,
             @PathVariable("teacherName") String teacherName,
             @PathVariable("teacherPhone") String teacherPhone,
             @PathVariable("teacherDescription") String teacherDescription) {
-        Teacher teacher = Teacher.builder().teacherNumString(teacherNum).teacherNameString(teacherName)
+        TeacherEntity teacher = TeacherEntity.builder().teacherNumString(teacherNum).teacherNameString(teacherName)
                 .teacherPhoneString(teacherPhone).teacherDescriptionString(teacherDescription).build();
         // 保存到数据库
         repository.save(teacher);
@@ -73,8 +73,8 @@ public class TeacherController {
      * @return
      */
     @PostMapping("/findAllteacher")
-    public List<Teacher> findAll() {
-        List<Teacher> teacherList = repository.findAll();
+    public List<TeacherEntity> findAll() {
+        List<TeacherEntity> teacherList = repository.findAll();
         // 判断是否查找到
         if (teacherList.size() == 0) {
             System.out.println("Not Found");

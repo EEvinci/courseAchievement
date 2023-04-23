@@ -1,7 +1,7 @@
 package courseAchievement.controller;
 
-import courseAchievement.entity.Course;
-import courseAchievement.repository.CourseRepository;
+import courseAchievement.entity.CourseEntity;
+import courseAchievement.repository.CourseEntityRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,9 +11,9 @@ import java.util.List;
 @RequestMapping("/course")
 public class CourseController {
 
-    private final CourseRepository repository;
+    private final CourseEntityRepository repository;
 
-    CourseController(CourseRepository repository) {
+    CourseController(CourseEntityRepository repository) {
         this.repository = repository;
     }
 
@@ -24,10 +24,10 @@ public class CourseController {
      * @return
      */
     @PostMapping("/queryCourseByNum/{courseNum}")
-    public Course queryCourseByNum(@PathVariable("courseNum") String courseNum) {
-        Course course = Course.builder().courseNumString(courseNum).build(); // 创建一个课程对象
+    public CourseEntity queryCourseByNum(@PathVariable("courseNum") String courseNum) {
+        CourseEntity course = CourseEntity.builder().courseNumString(courseNum).build(); // 创建一个课程对象
         // 查询数据库中的课程
-        List<Course> courseList = repository.findByCourseNumStringLike(courseNum);
+        List<CourseEntity> courseList = repository.findByCourseNumStringLike(courseNum);
         // 判断是否查找到
         if (courseList.size() == 0) {
             System.out.println("Not Found");
@@ -46,10 +46,10 @@ public class CourseController {
      * @return
      */
     @PostMapping("/queryCourseByName/{courseName}")
-    public Course queryCourseByName(@PathVariable("courseName") String courseName) {
-        Course course = Course.builder().courseNameString(courseName).build();
+    public CourseEntity queryCourseByName(@PathVariable("courseName") String courseName) {
+        CourseEntity course = CourseEntity.builder().courseNameString(courseName).build();
         // 查询数据库中的课程
-        List<Course> courseList = repository.findByCourseNameStringLike(courseName);
+        List<CourseEntity> courseList = repository.findByCourseNameStringLike(courseName);
         if (courseList.size() == 0) {
             System.out.println("Not Found");
             return null;
@@ -72,14 +72,14 @@ public class CourseController {
      * @return
      */
     @PostMapping("/addCourse/{courseNum}/{courseName}/{courseDescription}/{courseCredit}/{courseBook}/{courseTeacher}")
-    public Course addCourse(@PathVariable("courseNum") String courseNum,
+    public CourseEntity addCourse(@PathVariable("courseNum") String courseNum,
             @PathVariable("courseName") String courseName,
             @PathVariable("courseDescription") String courseDescription,
             @PathVariable("courseCredit") String courseCredit,
             @PathVariable("courseBook") String courseBook,
             @PathVariable("courseTeacher") String courseTeacher) {
 
-        Course course = Course.builder().courseNumString(courseNum).courseNameString(courseName)
+        CourseEntity course = CourseEntity.builder().courseNumString(courseNum).courseNameString(courseName)
                 .courseDescriptionString(courseDescription).courseCreditString(courseCredit)
                 .courseBookString(courseBook).courseTeacherId(0).build();
         // 保存到数据库
@@ -98,8 +98,8 @@ public class CourseController {
      * @return
      */
     @PostMapping("/findAllCourse")
-    public List<Course> findAll() {
-        List<Course> courseList = repository.findAll();
+    public List<CourseEntity> findAll() {
+        List<CourseEntity> courseList = repository.findAll();
         // 判断是否查找到
         if (courseList.size() == 0) {
             System.out.println("Not Found");

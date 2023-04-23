@@ -26,7 +26,7 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "example", schema = "courseachievement", catalog = "")
-public class Example {
+public class ExampleEntity {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,5 +41,5 @@ public class Example {
     // 多对多关系 知识点与案例
     @ManyToMany(mappedBy = "examples")
     @Builder.Default
-    private Set<KnowledgePoint> knowledgePoint = new HashSet<>();
+    private Set<KnowledgeEntity> knowledgePoint = new HashSet<>();
 }

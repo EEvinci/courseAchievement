@@ -28,7 +28,7 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "course", schema = "courseachievement", catalog = "")
-public class Course {
+public class CourseEntity {
   @Id
   @Column(name = "id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -56,11 +56,11 @@ public class Course {
   @ManyToMany
   @JoinTable(name = "course_label", joinColumns = @JoinColumn(name = "label_id"), inverseJoinColumns = @JoinColumn(name = "course_id"))
   @Builder.Default
-  private Set<Label> labels = new HashSet<>();
+  private Set<LabelEntity> labels = new HashSet<>();
 
   // 多对多关系 课程与知识点
   @ManyToMany
   @JoinTable(name = "course_knowledge", joinColumns = @JoinColumn(name = "knowledge_id"), inverseJoinColumns = @JoinColumn(name = "course_id"))
   @Builder.Default
-  private Set<KnowledgePoint> knowledges = new HashSet<>();
+  private Set<KnowledgeEntity> knowledges = new HashSet<>();
 }

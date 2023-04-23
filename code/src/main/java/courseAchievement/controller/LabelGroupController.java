@@ -1,7 +1,7 @@
 package courseAchievement.controller;
 
-import courseAchievement.entity.LabelGroup;
-import courseAchievement.repository.LabelGroupRepository;
+import courseAchievement.entity.LabelGroupEntity;
+import courseAchievement.repository.LabelGroupEntityRepository;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +13,9 @@ import java.util.List;
 @RequestMapping("/labelGroup")
 public class LabelGroupController {
 
-    private final LabelGroupRepository repository;
+    private final LabelGroupEntityRepository repository;
 
-    LabelGroupController(LabelGroupRepository repository) {
+    LabelGroupController(LabelGroupEntityRepository repository) {
         this.repository = repository;
     }
 
@@ -26,10 +26,10 @@ public class LabelGroupController {
      * @return
      */
     @PostMapping("/querylabelGroupByNum/{labelGroupNum}")
-    public LabelGroup queryLabelGroupByNum(@PathVariable("labelGroupNum") String labelGroupNum) {
-        LabelGroup labelGroup = LabelGroup.builder().labelGroupNumString(labelGroupNum).build(); // 创建一个标签组对象
+    public LabelGroupEntity queryLabelGroupByNum(@PathVariable("labelGroupNum") String labelGroupNum) {
+        LabelGroupEntity labelGroup = LabelGroupEntity.builder().labelGroupNumString(labelGroupNum).build(); // 创建一个标签组对象
         // 查询数据库中的课程
-        List<LabelGroup> labelGroupList = repository.findByLabelGroupNumStringLike(labelGroupNum);
+        List<LabelGroupEntity> labelGroupList = repository.findByLabelGroupNumStringLike(labelGroupNum);
         // 判断是否查找到
         if (labelGroupList.size() == 0) {
             System.out.println("Not Found");
@@ -49,9 +49,9 @@ public class LabelGroupController {
      * @return
      */
     @PostMapping("/addLabelGroup/{labelGroupNum}/{labelGroupContent}")
-    public LabelGroup addlabelGroup(@PathVariable("labelGroupNum") String labelGroupNum,
+    public LabelGroupEntity addlabelGroup(@PathVariable("labelGroupNum") String labelGroupNum,
             @PathVariable("labelGroupContent") String labelGroupContent) {
-        LabelGroup labelGroup = LabelGroup.builder().labelGroupNumString(labelGroupNum)
+        LabelGroupEntity labelGroup = LabelGroupEntity.builder().labelGroupNumString(labelGroupNum)
                 .labelGroupContentString(labelGroupContent).build();
         // 保存到数据库
         repository.save(labelGroup);
@@ -69,8 +69,8 @@ public class LabelGroupController {
      * @return
      */
     @PostMapping("/findAllLabelGroup")
-    public List<LabelGroup> findAll() {
-        List<LabelGroup> labelGroupList = repository.findAll();
+    public List<LabelGroupEntity> findAll() {
+        List<LabelGroupEntity> labelGroupList = repository.findAll();
         // 判断是否查找到
         if (labelGroupList.size() == 0) {
             System.out.println("Not Found");

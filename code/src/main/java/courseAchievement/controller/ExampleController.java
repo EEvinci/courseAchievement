@@ -1,7 +1,7 @@
 package courseAchievement.controller;
 
-import courseAchievement.entity.Example;
-import courseAchievement.repository.ExampleRepository;
+import courseAchievement.entity.ExampleEntity;
+import courseAchievement.repository.ExampleEntityRepository;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +13,9 @@ import java.util.List;
 @RequestMapping("/example")
 public class ExampleController {
 
-    private final ExampleRepository repository;
+    private final ExampleEntityRepository repository;
 
-    ExampleController(ExampleRepository repository) {
+    ExampleController(ExampleEntityRepository repository) {
         this.repository = repository;
     }
 
@@ -26,10 +26,10 @@ public class ExampleController {
      * @return
      */
     @PostMapping("/queryExampleByNum/{exampleNum}")
-    public Example queryExampleByNum(@PathVariable("exampleNum") String exampleNum) {
-        Example example = Example.builder().exampleNumString(exampleNum).build(); // 创建一个课程对象
+    public ExampleEntity queryExampleByNum(@PathVariable("exampleNum") String exampleNum) {
+        ExampleEntity example = ExampleEntity.builder().exampleNumString(exampleNum).build(); // 创建一个课程对象
         // 查询数据库中的课程
-        List<Example> exampleList = repository.findByExampleNumString(exampleNum);
+        List<ExampleEntity> exampleList = repository.findByExampleNumString(exampleNum);
         // 判断是否查找到
         if (exampleList.size() == 0) {
             System.out.println("Not Found");
@@ -49,9 +49,9 @@ public class ExampleController {
      * @return
      */
     @PostMapping("/addExample/{exampleNum}/{exampleContent}")
-    public Example addExample(@PathVariable("exampleNum") String exampleNum,
+    public ExampleEntity addExample(@PathVariable("exampleNum") String exampleNum,
             @PathVariable("exampleContent") String exampleContent) {
-        Example example = Example.builder().exampleNumString(exampleNum).exampleContentString(exampleContent).build();
+        ExampleEntity example = ExampleEntity.builder().exampleNumString(exampleNum).exampleContentString(exampleContent).build();
         // 保存到数据库
         repository.save(example);
         // 判断是否保存成功
@@ -68,8 +68,8 @@ public class ExampleController {
      * @return
      */
     @PostMapping("/findAllExample")
-    public List<Example> findAll() {
-        List<Example> exampleList = repository.findAll();
+    public List<ExampleEntity> findAll() {
+        List<ExampleEntity> exampleList = repository.findAll();
         // 判断是否查找到
         if (exampleList.size() == 0) {
             System.out.println("Not Found");

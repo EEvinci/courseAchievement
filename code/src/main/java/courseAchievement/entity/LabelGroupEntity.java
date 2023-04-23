@@ -22,7 +22,7 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "label_group", schema = "courseachievement", catalog = "")
-public class LabelGroup {
+public class LabelGroupEntity {
   @Id
   @Column(name = "id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)

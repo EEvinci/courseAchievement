@@ -27,7 +27,7 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "label", schema = "courseachievement", catalog = "")
-public class Label {
+public class LabelEntity {
   @Id
   @Column(name = "id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,11 +46,11 @@ public class Label {
 
   // 多对多关系 标签与课程
   @ManyToMany(mappedBy = "labels")
-  private Set<Course> courses = new HashSet<Course>();
+  private Set<CourseEntity> courses = new HashSet<CourseEntity>();
 
   // 多对多关系 标签与知识点
   @ManyToMany(mappedBy = "labels")
   @Builder.Default
-  private Set<KnowledgePoint> knowledgePoint = new HashSet<>();
+  private Set<KnowledgeEntity> knowledgePoint = new HashSet<>();
 
 }

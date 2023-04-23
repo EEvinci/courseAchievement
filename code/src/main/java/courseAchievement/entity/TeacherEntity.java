@@ -23,7 +23,7 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "teacher", schema = "courseachievement", catalog = "")
-public class Teacher {
+public class TeacherEntity {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
