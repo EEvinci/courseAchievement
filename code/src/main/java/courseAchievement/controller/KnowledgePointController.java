@@ -1,6 +1,6 @@
 package courseAchievement.controller;
 
-import courseAchievement.Entity.KnowledgePoint;
+import courseAchievement.entity.KnowledgePoint;
 import courseAchievement.repository.KnowledgePointRepository;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;

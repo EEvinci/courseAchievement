@@ -1,6 +1,6 @@
 package courseAchievement.controller;
 
-import courseAchievement.Entity.Example;
+import courseAchievement.entity.Example;
 import courseAchievement.repository.ExampleRepository;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;

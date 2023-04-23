@@ -1,6 +1,6 @@
 package courseAchievement.controller;
 
-import courseAchievement.Entity.Teacher;
+import courseAchievement.entity.Teacher;
 import courseAchievement.repository.TeacherRepository;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;

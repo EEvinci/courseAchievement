@@ -1,4 +1,4 @@
-package courseAchievement.Entity;
+package courseAchievement.entity;
 
 import java.util.HashSet;
 import java.util.Set;

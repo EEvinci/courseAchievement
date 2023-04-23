@@ -1,6 +1,6 @@
 package courseAchievement.controller;
 
-import courseAchievement.Entity.LabelGroup;
+import courseAchievement.entity.LabelGroup;
 import courseAchievement.repository.LabelGroupRepository;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;

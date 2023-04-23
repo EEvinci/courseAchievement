@@ -2,7 +2,7 @@ package courseAchievement.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import courseAchievement.Entity.Label;
+import courseAchievement.entity.Label;
 
 import java.util.List;
 

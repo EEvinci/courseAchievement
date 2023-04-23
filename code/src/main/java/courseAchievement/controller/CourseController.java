@@ -1,6 +1,6 @@
 package courseAchievement.controller;
 
-import courseAchievement.Entity.Course;
+import courseAchievement.entity.Course;
 import courseAchievement.repository.CourseRepository;
 import org.springframework.web.bind.annotation.*;
 
