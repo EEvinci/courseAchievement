@@ -17,9 +17,9 @@ public interface KnowledgeService {
 
     public KnowledgeForm findPreKnowledgeById(Integer id) throws ResourceNotFoundException;
 
+    public Integer updateOneKnowledge(KnowledgeEntity knowledgeEntity) throws ResourceNotFoundException;
+
     // 根据preKnowledgeId 来进行查询
     public List<KnowledgeForm> findAllUsingKnowledge(Integer id) throws ResourceNotFoundException;
-
-    public Integer updateOneKnowledge(KnowledgeEntity knowledgeEntity) throws ResourceNotFoundException;
 
 }
