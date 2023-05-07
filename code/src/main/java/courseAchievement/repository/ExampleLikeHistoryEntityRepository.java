@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface ExampleLikeHistoryEntityRepository extends JpaRepository<ExampleLikeHistoryEntity, Integer> {
     @Query("select e.iid from ExampleLikeHistoryEntity e where e.exampleIid = :exampleIid and e.userIid = :userIid")
-    Integer findByExampleIidAndUserIid(@Param("exampleIid") Integer exampleIid,@Param("userIid") Integer userIid);
+    Integer findByExampleIidAndUserIid(@Param("exampleIid") Integer exampleIid, @Param("userIid") Integer userIid);
 }

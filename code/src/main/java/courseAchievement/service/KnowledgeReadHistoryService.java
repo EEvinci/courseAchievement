@@ -11,10 +11,10 @@ public interface KnowledgeReadHistoryService {
     Integer getCountOfReadHistory(Integer knowledgeIid) throws EchoServiceException;
 
     // 分页查询
-    Page<KnowledgeReadHistoryEntity> findByKnowledgeIid(Integer knowledgeIid, int pageNum, int pageSize) throws EchoServiceException;
-
+    Page<KnowledgeReadHistoryEntity> findByKnowledgeIid(Integer knowledgeIid, int pageNum, int pageSize)
+            throws EchoServiceException;
 
     public Integer addOneRecord(KnowledgeReadHistoryEntity knowledgeReadHistoryEntity) throws EchoServiceException;
 
-    public List<String> getTopScoringKnowledge(String key) throws  EchoServiceException;
+    public List<String> getTopScoringKnowledge(String key) throws EchoServiceException;
 }

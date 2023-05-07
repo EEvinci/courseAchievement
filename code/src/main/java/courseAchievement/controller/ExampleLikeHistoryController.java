@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
- 
+
 import java.util.List;
 
 @RestController
@@ -19,39 +19,35 @@ public class ExampleLikeHistoryController {
     private ExampleLikeHistoryService exampleLikeHistoryService;
 
     @PostMapping("/query")
-    public ResponseData findCountOfLike(@RequestBody ExampleLikeHistoryEntity exampleLikeHistoryEntity){
+    public ResponseData findCountOfLike(@RequestBody ExampleLikeHistoryEntity exampleLikeHistoryEntity) {
         int count = exampleLikeHistoryService.getCountOfExampleLike(exampleLikeHistoryEntity.getExampleIid());
-        if(count>0){
-            return new ResponseData(ResponseMsg.SUCCESS,count);
-        }
-        else {
-            return new ResponseData(ResponseMsg.FAILED,count);
+        if (count > 0) {
+            return new ResponseData(ResponseMsg.SUCCESS, count);
+        } else {
+            return new ResponseData(ResponseMsg.FAILED, count);
         }
 
     }
 
     // 增加一条点赞记录
     @PostMapping("/add")
-    public ResponseData addOneRecord(@RequestBody ExampleLikeHistoryEntity exampleLikeHistoryEntity){
+    public ResponseData addOneRecord(@RequestBody ExampleLikeHistoryEntity exampleLikeHistoryEntity) {
         int flag = exampleLikeHistoryService.addOneRecordLikeHistory(exampleLikeHistoryEntity);
-        if(flag == 1){
-            return new ResponseData(ResponseMsg.SUCCESS,flag);
-        }
-        else {
-            return new ResponseData(ResponseMsg.FAILED,flag);
+        if (flag == 1) {
+            return new ResponseData(ResponseMsg.SUCCESS, flag);
+        } else {
+            return new ResponseData(ResponseMsg.FAILED, flag);
         }
     }
 
-
     // 最高的20条记录
     @PostMapping("query_max")
-    public ResponseData queryMax20Example(){
+    public ResponseData queryMax20Example() {
         List<String> temp = exampleLikeHistoryService.getTopScoringExample("like_count_example");
-        if(temp.size()>0){
-            return new ResponseData(ResponseMsg.SUCCESS,temp);
-        }
-        else{
-            return new ResponseData(ResponseMsg.FAILED,temp);
+        if (temp.size() > 0) {
+            return new ResponseData(ResponseMsg.SUCCESS, temp);
+        } else {
+            return new ResponseData(ResponseMsg.FAILED, temp);
         }
 
     }
