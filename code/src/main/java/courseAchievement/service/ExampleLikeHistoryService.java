@@ -1,10 +1,8 @@
-package com.example.testjpa.service;
-
-import com.example.testjpa.entity.ExampleLikeHistoryEntity;
-import com.example.testjpa.entity.KnowledgeReadHistoryEntity;
-import com.example.testjpa.exception.EchoServiceException;
+package courseAchievement.service;
 
 import java.util.List;
+import courseAchievement.formbean.ExampleLikeHistoryForm;
+import courseAchievement.entity.ExampleLikeHistoryEntity;
 
 public interface ExampleLikeHistoryService {
     // 查找特定 example 的 阅读数量,

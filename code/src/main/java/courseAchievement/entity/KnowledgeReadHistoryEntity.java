@@ -1,4 +1,4 @@
-package com.example.testjpa.entity;
+package courseAchievement.entity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;

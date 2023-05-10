@@ -8,9 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 
 import lombok.Builder;
 import lombok.Data;
@@ -45,7 +46,7 @@ public class LabelEntity {
   private int labelGroupId;
 
   // 多对多关系 标签与课程
-  @ManyToMany(mappedBy = "labels")
+  @ManyToMany(mappedBy = "labels") // mappedBy表示由CourseEntity中的labels字段维护关系
   private Set<CourseEntity> courses = new HashSet<CourseEntity>();
 
   // 多对多关系 标签与知识点

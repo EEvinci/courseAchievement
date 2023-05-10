@@ -1,68 +1,39 @@
-package com.example.testjpa.entity;
+package courseAchievement.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.sql.Timestamp;
-import java.util.Objects;
 
 @Entity
-@Table(name = "example_like_history", schema = "zuccqa", catalog = "")
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "example_like_history", schema = "courseachievement", catalog = "")
 public class ExampleLikeHistoryEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "iid")
-    private int iid;
-    @Basic
-    @Column(name = "user_iid")
-    private Integer userIid;
-    @Basic
-    @Column(name = "example_iid")
-    private Integer exampleIid;
-    @Basic
-    @Column(name = "like_time")
-    private Timestamp likeTime;
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-    public int getIid() {
-        return iid;
-    }
+    @Column(name = "user_num")
+    private Integer userNumInteger;
 
-    public void setIid(int iid) {
-        this.iid = iid;
-    }
+    @Column(name = "example_num")
+    private Integer exampleNumInteger;
+    
+    @Column(name = "like_timestamp")
+    private Timestamp likeTimestamp;
 
-    public Integer getUserIid() {
-        return userIid;
-    }
-
-    public void setUserIid(Integer userIid) {
-        this.userIid = userIid;
-    }
-
-    public Integer getExampleIid() {
-        return exampleIid;
-    }
-
-    public void setExampleIid(Integer exampleIid) {
-        this.exampleIid = exampleIid;
-    }
-
-    public Timestamp getLikeTime() {
-        return likeTime;
-    }
-
-    public void setLikeTime(Timestamp likeTime) {
-        this.likeTime = likeTime;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ExampleLikeHistoryEntity that = (ExampleLikeHistoryEntity) o;
-        return iid == that.iid && Objects.equals(userIid, that.userIid) && Objects.equals(exampleIid, that.exampleIid) && Objects.equals(likeTime, that.likeTime);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(iid, userIid, exampleIid, likeTime);
-    }
 }
