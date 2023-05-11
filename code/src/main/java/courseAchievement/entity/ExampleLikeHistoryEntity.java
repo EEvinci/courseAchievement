@@ -27,11 +27,11 @@ public class ExampleLikeHistoryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "user_num")
-    private Integer userNumInteger;
+    @Column(name = "user_id")
+    private Integer userId;
 
     @Column(name = "example_num")
-    private Integer exampleNumInteger;
+    private Integer exampleId;
     
     @Column(name = "like_timestamp")
     private Timestamp likeTimestamp;

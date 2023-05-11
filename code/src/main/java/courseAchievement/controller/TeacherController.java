@@ -27,7 +27,7 @@ public class TeacherController {
      */
     @PostMapping("/queryteacherByNum/{teacherNum}")
     public TeacherEntity queryteacherByNum(@PathVariable("teacherNum") String teacherNum) {
-        TeacherEntity teacher = TeacherEntity.builder().teacherNumString(teacherNum).build(); // 创建一个老师对象
+        TeacherEntity teacher = TeacherEntity.builder().teacherNum(teacherNum).build(); // 创建一个老师对象
         // 查询数据库中的课程
         List<TeacherEntity> teacherList = repository.findByTeacherNumStringLike(teacherNum);
         // 判断是否查找到
@@ -55,8 +55,8 @@ public class TeacherController {
             @PathVariable("teacherName") String teacherName,
             @PathVariable("teacherPhone") String teacherPhone,
             @PathVariable("teacherDescription") String teacherDescription) {
-        TeacherEntity teacher = TeacherEntity.builder().teacherNumString(teacherNum).teacherNameString(teacherName)
-                .teacherPhoneString(teacherPhone).teacherDescriptionString(teacherDescription).build();
+        TeacherEntity teacher = TeacherEntity.builder().teacherNum(teacherNum).teacherName(teacherName)
+                .teacherPhone(teacherPhone).teacherDescription(teacherDescription).build();
         // 保存到数据库
         repository.save(teacher);
         // 判断是否保存成功

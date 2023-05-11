@@ -35,10 +35,10 @@ public class LabelEntity {
   private int id;
 
   @Column(name = "label_num")
-  private String labelNumString;
+  private String labelNum;
 
   @Column(name = "label_content")
-  private String labelContentString;
+  private String labelContent;
 
   // 多对一关系（外键）
   @JoinColumn(name = "label_group_id")

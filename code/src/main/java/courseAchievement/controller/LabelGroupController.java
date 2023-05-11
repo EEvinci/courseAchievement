@@ -27,7 +27,7 @@ public class LabelGroupController {
      */
     @PostMapping("/querylabelGroupByNum/{labelGroupNum}")
     public LabelGroupEntity queryLabelGroupByNum(@PathVariable("labelGroupNum") String labelGroupNum) {
-        LabelGroupEntity labelGroup = LabelGroupEntity.builder().labelGroupNumString(labelGroupNum).build(); // 创建一个标签组对象
+        LabelGroupEntity labelGroup = LabelGroupEntity.builder().labelGroupNum(labelGroupNum).build(); // 创建一个标签组对象
         // 查询数据库中的课程
         List<LabelGroupEntity> labelGroupList = repository.findByLabelGroupNumStringLike(labelGroupNum);
         // 判断是否查找到
@@ -51,8 +51,8 @@ public class LabelGroupController {
     @PostMapping("/addLabelGroup/{labelGroupNum}/{labelGroupContent}")
     public LabelGroupEntity addlabelGroup(@PathVariable("labelGroupNum") String labelGroupNum,
             @PathVariable("labelGroupContent") String labelGroupContent) {
-        LabelGroupEntity labelGroup = LabelGroupEntity.builder().labelGroupNumString(labelGroupNum)
-                .labelGroupContentString(labelGroupContent).build();
+        LabelGroupEntity labelGroup = LabelGroupEntity.builder().labelGroupNum(labelGroupNum)
+                .labelGroupContent(labelGroupContent).build();
         // 保存到数据库
         repository.save(labelGroup);
         // 判断是否保存成功

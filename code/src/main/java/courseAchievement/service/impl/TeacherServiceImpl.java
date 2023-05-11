@@ -28,10 +28,10 @@ public class TeacherServiceImpl implements TeacherService {
         for(int i=0;i<oldList.size();i++){
             TeacherForm teacherForm = new TeacherForm();
             teacherForm.setIid(oldList.get(i).getId());
-            teacherForm.setTeacherId(oldList.get(i).getTeacherNumString());
-            teacherForm.setTeacherName(oldList.get(i).getTeacherNameString());
-            teacherForm.setTeacherPhone(oldList.get(i).getTeacherPhoneString());
-            teacherForm.setTeacherDescription(oldList.get(i).getTeacherDescriptionString());
+            teacherForm.setTeacherId(oldList.get(i).getTeacherNum());
+            teacherForm.setTeacherName(oldList.get(i).getTeacherName());
+            teacherForm.setTeacherPhone(oldList.get(i).getTeacherPhone());
+            teacherForm.setTeacherDescription(oldList.get(i).getTeacherDescription());
             newList.add(teacherForm);
         }
         return newList;

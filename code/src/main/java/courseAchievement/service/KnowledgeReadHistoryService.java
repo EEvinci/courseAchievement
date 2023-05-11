@@ -1,20 +1,22 @@
-package com.example.testjpa.service;
+package courseAchievement.service;
 
-import com.example.testjpa.entity.KnowledgeReadHistoryEntity;
-import com.example.testjpa.exception.EchoServiceException;
+import courseAchievement.entity.KnowledgeReadHistoryEntity;
+import courseAchievement.exception.ResourceNotFoundException;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
 
 public interface KnowledgeReadHistoryService {
     // 获取知识点总数的接口
-    Integer getCountOfReadHistory(Integer knowledgeIid) throws EchoServiceException;
+    Integer getCountOfReadHistory(Integer knowledgeIid) throws ResourceNotFoundException;
 
     // 分页查询
     Page<KnowledgeReadHistoryEntity> findByKnowledgeIid(Integer knowledgeIid, int pageNum, int pageSize)
-            throws EchoServiceException;
+            throws ResourceNotFoundException;
 
-    public Integer addOneRecord(KnowledgeReadHistoryEntity knowledgeReadHistoryEntity) throws EchoServiceException;
+    // 添加一条记录
+    public Integer addOneRecord(KnowledgeReadHistoryEntity knowledgeReadHistoryEntity) throws ResourceNotFoundException;
 
-    public List<String> getTopScoringKnowledge(String key) throws EchoServiceException;
+    // 返回排名最高的 20 条知识点
+    public List<String> getTopScoringKnowledge(String key) throws ResourceNotFoundException;
 }

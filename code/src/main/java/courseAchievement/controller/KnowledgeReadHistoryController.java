@@ -1,10 +1,10 @@
-package com.example.testjpa.controller;
+package courseAchievement.controller;
 
-import com.example.testjpa.entity.KnowledgeReadHistoryEntity;
-import com.example.testjpa.repository.KnowledgeReadHistoryEntityRepository;
-import com.example.testjpa.result.ResponseData;
-import com.example.testjpa.result.ResponseMsg;
-import com.example.testjpa.service.KnowledgeReadHistoryService;
+import courseAchievement.entity.KnowledgeReadHistoryEntity;
+import courseAchievement.result.ResponseData;
+import courseAchievement.result.ResponseMsg;
+import courseAchievement.service.KnowledgeReadHistoryService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,15 +16,19 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("read")
+@RequestMapping("/read")
 public class KnowledgeReadHistoryController {
+    // 创建一个服务对象
     @Autowired
     private KnowledgeReadHistoryService knowledgeReadHistoryService;
 
+    /*
+     * 获取知识点总数的接口
+     */
     @PostMapping("/count")
     public ResponseData getCountOfReadHistory(@RequestBody KnowledgeReadHistoryEntity knowledgeReadHistoryEntity) {
 
-        Integer count = knowledgeReadHistoryService.getCountOfReadHistory(knowledgeReadHistoryEntity.getKnowledgeIid());
+        Integer count = knowledgeReadHistoryService.getCountOfReadHistory(knowledgeReadHistoryEntity.getKnowledgeId());
         if (count >= 0) {
             return new ResponseData(ResponseMsg.SUCCESS, count);
         } else {
@@ -46,6 +50,9 @@ public class KnowledgeReadHistoryController {
         return new ResponseData(ResponseMsg.SUCCESS, knowledgeReadHistoryEntityPage);
     }
 
+    /*
+     * 增加一条阅读记录
+     */
     @PostMapping("/add")
     public ResponseData addOneRecord(@RequestBody KnowledgeReadHistoryEntity knowledgeReadHistoryEntity) {
         int flag = knowledgeReadHistoryService.addOneRecord(knowledgeReadHistoryEntity);
@@ -56,7 +63,10 @@ public class KnowledgeReadHistoryController {
         }
     }
 
-    @PostMapping("query_max")
+    /*
+     * 返回排名最高的 20 条知识点
+     */
+    @PostMapping("/query_max")
     public ResponseData queryMax20Example() {
         List<String> temp = knowledgeReadHistoryService.getTopScoringKnowledge("read_count_knowledge");
         if (temp.size() > 0) {

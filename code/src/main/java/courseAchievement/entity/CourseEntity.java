@@ -36,19 +36,19 @@ public class CourseEntity {
   private int id; 
 
   @Column(name = "course_num")
-  private String courseNumString;  
+  private String courseNum;  
 
   @Column(name = "course_name")
-  private String courseNameString;  
+  private String courseName;  
 
   @Column(name = "course_description")
-  private String courseDescriptionString;
+  private String courseDescription;
 
   @Column(name = "course_credit")
-  private String courseCreditString;
+  private String courseCredit;
 
   @Column(name = "course_book")
-  private String courseBookString;
+  private String courseBook;
 
   @Column(name = "course_teacher_id")
   private int courseTeacherId;

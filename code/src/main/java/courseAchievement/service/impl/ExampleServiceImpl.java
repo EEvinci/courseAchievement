@@ -27,8 +27,8 @@ public class ExampleServiceImpl implements ExampleService {
         for (int i = 0; i < oldList.size(); i++) {
             ExampleForm exampleForm = new ExampleForm();
             exampleForm.setIid(oldList.get(i).getId());
-            exampleForm.setExampleId((oldList.get(i)).getExampleNumString());
-            exampleForm.setExampleUrl(oldList.get(i).getExampleContentString());
+            exampleForm.setExampleId((oldList.get(i)).getExampleNum());
+            exampleForm.setExampleUrl(oldList.get(i).getExampleContent());
             newList.add(exampleForm);
         }
 

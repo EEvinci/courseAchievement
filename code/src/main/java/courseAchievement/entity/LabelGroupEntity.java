@@ -29,9 +29,9 @@ public class LabelGroupEntity {
   private int id;
 
   @Column(name = "label_group_num")
-  private String labelGroupNumString;
+  private String labelGroupNum;
 
   @Column(name = "label_group_content")
-  private String labelGroupContentString;
+  private String labelGroupContent;
 
 }

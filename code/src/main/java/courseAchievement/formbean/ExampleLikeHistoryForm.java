@@ -1,4 +1,4 @@
-package com.example.testjpa.formbean;
+package courseAchievement.formbean;
 
 import java.sql.Timestamp;
 

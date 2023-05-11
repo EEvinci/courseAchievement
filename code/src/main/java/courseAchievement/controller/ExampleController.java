@@ -27,7 +27,7 @@ public class ExampleController {
      */
     @PostMapping("/queryExampleByNum/{exampleNum}")
     public ExampleEntity queryExampleByNum(@PathVariable("exampleNum") String exampleNum) {
-        ExampleEntity example = ExampleEntity.builder().exampleNumString(exampleNum).build(); // 创建一个课程对象
+        ExampleEntity example = ExampleEntity.builder().exampleNum(exampleNum).build(); // 创建一个课程对象
         // 查询数据库中的课程
         List<ExampleEntity> exampleList = repository.findByExampleNumString(exampleNum);
         // 判断是否查找到
@@ -51,7 +51,7 @@ public class ExampleController {
     @PostMapping("/addExample/{exampleNum}/{exampleContent}")
     public ExampleEntity addExample(@PathVariable("exampleNum") String exampleNum,
             @PathVariable("exampleContent") String exampleContent) {
-        ExampleEntity example = ExampleEntity.builder().exampleNumString(exampleNum).exampleContentString(exampleContent).build();
+        ExampleEntity example = ExampleEntity.builder().exampleNum(exampleNum).exampleContent(exampleContent).build();
         // 保存到数据库
         repository.save(example);
         // 判断是否保存成功

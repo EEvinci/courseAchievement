@@ -1,6 +1,6 @@
-package com.example.testjpa.repository;
+package courseAchievement.repository;
 
-import com.example.testjpa.entity.ExampleLikeHistoryEntity;
+import courseAchievement.entity.ExampleLikeHistoryEntity;
 import io.lettuce.core.dynamic.annotation.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

@@ -35,13 +35,13 @@ public class KnowledgeEntity {
   private int id;
 
   @Column(name = "knowledge_num")
-  private String knowledgeNumString;
+  private String knowledgeNum;
 
   @Column(name = "knowledge_description")
-  private String knowledgeDescriptionString;
+  private String knowledgeDescription;
 
   @Column(name = "knowledge_vital")
-  private String knowledgeVitalString;
+  private String knowledgeVital;
 
   // @TODO: consider the relationship between knowledge  and label
 

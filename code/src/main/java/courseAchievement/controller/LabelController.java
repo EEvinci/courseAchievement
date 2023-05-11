@@ -27,7 +27,7 @@ public class LabelController {
      */
     @PostMapping("/queryLabelByNum/{labelNum}")
     public LabelEntity queryLabelByNum(@PathVariable("labelNum") String labelNum) {
-        LabelEntity label = LabelEntity.builder().labelNumString(labelNum).build(); // 创建一个标签对象
+        LabelEntity label = LabelEntity.builder().labelNum(labelNum).build(); // 创建一个标签对象
         // 查询数据库中的课程
         List<LabelEntity> labelList = repository.findByLabelNumStringLike(labelNum);
         // 判断是否查找到
@@ -51,7 +51,7 @@ public class LabelController {
     @PostMapping("/addLabel/{labelNum}/{labelContent}")
     public LabelEntity addlabel(@PathVariable("labelNum") String labelNum,
             @PathVariable("labelContent") String labelContent) {
-        LabelEntity label = LabelEntity.builder().labelNumString(labelNum).labelContentString(labelContent).build();
+        LabelEntity label = LabelEntity.builder().labelNum(labelNum).labelContent(labelContent).build();
         // 保存到数据库
         repository.save(label);
         // 判断是否保存成功
@@ -65,7 +65,7 @@ public class LabelController {
     @PostMapping("updateLabel/{labelNum}/{labelContent}")
     public LabelEntity updateLabel(@PathVariable("labelNum") String labelNum,
             @PathVariable("labelContent") String labelContent) {
-        LabelEntity label = LabelEntity.builder().labelNumString(labelNum).labelContentString(labelContent).build();
+        LabelEntity label = LabelEntity.builder().labelNum(labelNum).labelContent(labelContent).build();
         // 保存到数据库
         repository.save(label);
         // 判断是否保存成功

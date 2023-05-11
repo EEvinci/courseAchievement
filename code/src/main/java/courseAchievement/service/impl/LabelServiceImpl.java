@@ -28,8 +28,8 @@ public class LabelServiceImpl implements LabelService {
         for (int i = 0; i < oldList.size(); i++) {
             LabelForm labelForm = new LabelForm();
             labelForm.setIid(oldList.get(i).getId());
-            labelForm.setLabelId(oldList.get(i).getLabelNumString());
-            labelForm.setLabelContent(oldList.get(i).getLabelContentString());
+            labelForm.setLabelId(oldList.get(i).getLabelNum());
+            labelForm.setLabelContent(oldList.get(i).getLabelContent());
             labelForm.setLabelGroupIid(oldList.get(i).getLabelGroupId());
             newList.add(labelForm);
         }

@@ -27,7 +27,7 @@ public class KnowledgeController {
      */
     @PostMapping("/queryKnowledgeByNum/{knowledgeNum}")
     public KnowledgeEntity queryKnowledgeByNum(@PathVariable("knowledgeNum") String knowledgeNum) {
-        KnowledgeEntity knowledge = KnowledgeEntity.builder().knowledgeNumString(knowledgeNum).build(); // 创建一个课程对象
+        KnowledgeEntity knowledge = KnowledgeEntity.builder().knowledgeNum(knowledgeNum).build(); // 创建一个课程对象
         // 查询数据库中的课程
         List<KnowledgeEntity> knowledgeList = repository.findByKnowledgeNumStringLike(knowledgeNum);
         // 判断是否查找到
@@ -55,9 +55,9 @@ public class KnowledgeController {
             @PathVariable("knowledgeDescription") String knowledgeDescription,
             @PathVariable("knowledgeVital") String knowledgeVital,
             @PathVariable("preKnowledgeId") Integer preKnowledgeId) {
-        KnowledgeEntity knowledge = KnowledgeEntity.builder().knowledgeNumString(knowledgeNum)
-                .knowledgeDescriptionString(knowledgeDescription)
-                .knowledgeVitalString(knowledgeVital).PreknowledgeId(preKnowledgeId).build();
+        KnowledgeEntity knowledge = KnowledgeEntity.builder().knowledgeNum(knowledgeNum)
+                .knowledgeDescription(knowledgeDescription)
+                .knowledgeVital(knowledgeVital).PreknowledgeId(preKnowledgeId).build();
         // 保存到数据库
         repository.save(knowledge);
         // 判断是否保存成功

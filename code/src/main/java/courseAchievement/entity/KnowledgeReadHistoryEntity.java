@@ -1,68 +1,37 @@
 package courseAchievement.entity;
 
-import javax.persistence.*;
-import java.sql.Timestamp;
-import java.util.Objects;
+import java.security.Timestamp;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Entity
-@Table(name = "knowledge_read_history", schema = "zuccqa", catalog = "")
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "knowledge_read_history", schema = "courseachievement", catalog = "")
 public class KnowledgeReadHistoryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "iid")
-    private int iid;
-    @Basic
-    @Column(name = "user_iid")
-    private Integer userIid;
-    @Basic
-    @Column(name = "knowledge_iid")
-    private Integer knowledgeIid;
-    @Basic
+    @Column(name = "id")
+    private int id;
+
+    @Column(name = "user_id")
+    private Integer userId;
+
+    @Column(name = "knowledge_id")
+    private Integer knowledgeId;
+
     @Column(name = "read_time")
-    private Timestamp readTime;
-
-    public int getIid() {
-        return iid;
-    }
-
-    public void setIid(int iid) {
-        this.iid = iid;
-    }
-
-    public Integer getUserIid() {
-        return userIid;
-    }
-
-    public void setUserIid(Integer userIid) {
-        this.userIid = userIid;
-    }
-
-    public Integer getKnowledgeIid() {
-        return knowledgeIid;
-    }
-
-    public void setKnowledgeIid(Integer knowledgeIid) {
-        this.knowledgeIid = knowledgeIid;
-    }
-
-    public Timestamp getReadTime() {
-        return readTime;
-    }
-
-    public void setReadTime(Timestamp readTime) {
-        this.readTime = readTime;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        KnowledgeReadHistoryEntity that = (KnowledgeReadHistoryEntity) o;
-        return iid == that.iid && Objects.equals(userIid, that.userIid) && Objects.equals(knowledgeIid, that.knowledgeIid) && Objects.equals(readTime, that.readTime);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(iid, userIid, knowledgeIid, readTime);
-    }
+    private Timestamp readTimestamp;
 }

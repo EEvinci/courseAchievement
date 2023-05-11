@@ -33,10 +33,10 @@ public class ExampleEntity {
     private int id;
 
     @Column(name = "example_num")
-    private String exampleNumString;
+    private String exampleNum;
 
     @Column(name = "example_content")
-    private String exampleContentString;
+    private String exampleContent;
 
     // 多对多关系 知识点与案例
     @ManyToMany(mappedBy = "examples")

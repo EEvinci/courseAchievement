@@ -25,7 +25,7 @@ public class CourseController {
      */
     @PostMapping("/queryCourseByNum/{courseNum}")
     public CourseEntity queryCourseByNum(@PathVariable("courseNum") String courseNum) {
-        CourseEntity course = CourseEntity.builder().courseNumString(courseNum).build(); // 创建一个课程对象
+        CourseEntity course = CourseEntity.builder().courseNum(courseNum).build(); // 创建一个课程对象
         // 查询数据库中的课程
         List<CourseEntity> courseList = repository.findByCourseNumStringLike(courseNum);
         // 判断是否查找到
@@ -47,7 +47,7 @@ public class CourseController {
      */
     @PostMapping("/queryCourseByName/{courseName}")
     public CourseEntity queryCourseByName(@PathVariable("courseName") String courseName) {
-        CourseEntity course = CourseEntity.builder().courseNameString(courseName).build();
+        CourseEntity course = CourseEntity.builder().courseName(courseName).build();
         // 查询数据库中的课程
         List<CourseEntity> courseList = repository.findByCourseNameStringLike(courseName);
         if (courseList.size() == 0) {
@@ -79,9 +79,9 @@ public class CourseController {
             @PathVariable("courseBook") String courseBook,
             @PathVariable("courseTeacher") String courseTeacher) {
 
-        CourseEntity course = CourseEntity.builder().courseNumString(courseNum).courseNameString(courseName)
-                .courseDescriptionString(courseDescription).courseCreditString(courseCredit)
-                .courseBookString(courseBook).courseTeacherId(0).build();
+        CourseEntity course = CourseEntity.builder().courseNum(courseNum).courseName(courseName)
+                .courseDescription(courseDescription).courseCredit(courseCredit)
+                .courseBook(courseBook).courseTeacherId(0).build();
         // 保存到数据库
         repository.save(course);
         // 判断是否保存成功

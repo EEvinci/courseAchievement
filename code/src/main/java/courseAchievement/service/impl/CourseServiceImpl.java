@@ -30,10 +30,10 @@ public class CourseServiceImpl implements CourseService {
         for (int i = 0; i < oldList.size(); i++) {
             CourseForm courseForm = new CourseForm();
             courseForm.setIid(oldList.get(i).getId());
-            courseForm.setCourseId(oldList.get(i).getCourseNumString());
-            courseForm.setCourseName(oldList.get(i).getCourseNameString());
-            courseForm.setCourseDescripiton(oldList.get(i).getCourseDescriptionString());
-            courseForm.setCourseUsedBook(oldList.get(i).getCourseBookString());
+            courseForm.setCourseId(oldList.get(i).getCourseBook());
+            courseForm.setCourseName(oldList.get(i).getCourseName());
+            courseForm.setCourseDescripiton(oldList.get(i).getCourseDescription());
+            courseForm.setCourseUsedBook(oldList.get(i).getCourseBook());
             courseForm.setTeacherIid(oldList.get(i).getCourseTeacherId());
             newList.add(courseForm);
         }

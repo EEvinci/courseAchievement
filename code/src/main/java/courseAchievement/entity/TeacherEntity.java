@@ -30,14 +30,14 @@ public class TeacherEntity {
     private int id;
 
     @Column(name = "teacher_num")
-    private String teacherNumString;
+    private String teacherNum;
 
     @Column(name = "teacher_name")
-    private String teacherNameString;
+    private String teacherName;
 
     @Column(name = "teacher_phone")
-    private String teacherPhoneString;
+    private String teacherPhone;
 
     @Column(name = "teacher_description")
-    private String teacherDescriptionString;
+    private String teacherDescription;
 }

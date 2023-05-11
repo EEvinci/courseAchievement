@@ -30,8 +30,8 @@ public class LabelGroupServiceImpl implements LabelGroupService {
         for (int i = 0; i < oldList.size(); i++) {
             LabelGroupForm labelGroupForm = new LabelGroupForm();
             labelGroupForm.setIid(oldList.get(i).getId());
-            labelGroupForm.setLabelGroupId(oldList.get(i).getLabelGroupNumString());
-            labelGroupForm.setLabelGroupDescription(oldList.get(i).getLabelGroupContentString());
+            labelGroupForm.setLabelGroupId(oldList.get(i).getLabelGroupNum());
+            labelGroupForm.setLabelGroupDescription(oldList.get(i).getLabelGroupContent());
             newList.add(labelGroupForm);
         }
 

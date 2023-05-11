@@ -30,9 +30,9 @@ public class KnowledgeServiceImpl implements KnowledgeService {
         for (int i = 0; i < oldList.size(); i++) {
             KnowledgeForm knowledgeForm = new KnowledgeForm();
             knowledgeForm.setIid(oldList.get(i).getId());
-            knowledgeForm.setKnowledgeId(oldList.get(i).getKnowledgeNumString());
-            knowledgeForm.setKnowledgeDescription(oldList.get(i).getKnowledgeDescriptionString());
-            knowledgeForm.setKnowledgeImportantDescription(oldList.get(i).getKnowledgeVitalString());
+            knowledgeForm.setKnowledgeId(oldList.get(i).getKnowledgeNum());
+            knowledgeForm.setKnowledgeDescription(oldList.get(i).getKnowledgeDescription());
+            knowledgeForm.setKnowledgeImportantDescription(oldList.get(i).getKnowledgeVital());
             knowledgeForm.setPreKnowledgeIid(oldList.get(i).getPreknowledgeId());
             newList.add(knowledgeForm);
         }
