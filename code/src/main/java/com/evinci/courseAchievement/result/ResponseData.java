@@ -1,4 +1,4 @@
-package courseAchievement.result;
+package com.evinci.courseAchievement.result;
 
 public class ResponseData extends Response {
     private Object data;

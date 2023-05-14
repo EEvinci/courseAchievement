@@ -1,8 +1,9 @@
-package courseAchievement.service;
+package com.evinci.courseAchievement.service;
 
 import java.util.List;
-import courseAchievement.entity.ExampleLikeHistoryEntity;
-import courseAchievement.exception.ResourceNotFoundException;
+
+import com.evinci.courseAchievement.exception.ResourceNotFoundException;
+import com.evinci.courseAchievement.entity.ExampleLikeHistoryEntity;
 
 public interface ExampleLikeHistoryService {
     // 查找特定 example 的 阅读数量,

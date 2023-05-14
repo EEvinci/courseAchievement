@@ -1,15 +1,15 @@
-package courseAchievement.service;
+package com.evinci.courseAchievement.service;
 
 import java.util.List;
 
-import courseAchievement.exception.ResourceNotFoundException;
-import courseAchievement.formbean.TeacherForm;
-import courseAchievement.entity.TeacherEntity;
+import com.evinci.courseAchievement.exception.ResourceNotFoundException;
+import com.evinci.courseAchievement.formbean.TeacherForm;
+import com.evinci.courseAchievement.entity.TeacherEntity;
 
 public interface TeacherService {
     public List<TeacherForm> findAllTeachers() throws ResourceNotFoundException;
 
-    public TeacherForm findTeacherById(Integer iid) throws ResourceNotFoundException;
+    public TeacherForm findTeacherById(Integer id) throws ResourceNotFoundException;
 
     public List<TeacherForm> findTeacherByTeacherId(String teacherId) throws ResourceNotFoundException;
 
@@ -17,5 +17,5 @@ public interface TeacherService {
 
     public Integer createOneTeacher(TeacherEntity teacherEntity) throws ResourceNotFoundException;
 
-    public Integer deleteOneTeacher(Integer iid) throws ResourceNotFoundException;
+    public Integer deleteOneTeacher(Integer id) throws ResourceNotFoundException;
 }

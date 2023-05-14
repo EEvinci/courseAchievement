@@ -18,8 +18,8 @@ Lombok适用于以下场景：
 
 1. **数据对象**：如**JavaBean、POJO、DTO**等，它们**主要包含数据和一些基本操作，没有复杂的业务逻辑**。
 2. **实体类**：如**数据库实体映射类（Entity）**，用于表示**数据库表的数据结构**。
-3. **配置类**：用于表示配置信息的类，通常包含一些配置属性和默认值。
-4. 简单的业务对象：用于处理一些简单业务逻辑的类，它们通常包含一些成员变量和简单方法。
+3. **配置类**：用于**表示配置信息的类**，通常包含一些**配置属性和默认值**。
+4. **简单的业务对象**：用于处理一些**简单业务逻辑的类**，它们通常包含一些**成员变量和简单方法**。
 
 需要注意的是，Lombok并不适用于所有场景。在一些具有**复杂业务逻辑**的类中，可能需要**手动编写方法和构造函数**，以实现**特定功能和约束**。
 
@@ -29,24 +29,29 @@ Lombok适用于以下场景：
 - @Setter：为类的成员变量生成setter方法。
 - @ToString：为类生成toString方法，用于将类的实例转换为字符串表示。
 - @EqualsAndHashCode：为类生成equals和hashCode方法，用于比较两个对象是否相等。
-- <u>**@Data**：相当于@Getter、@Setter、@ToString、@EqualsAndHashCode的组合，同时生成getter、setter、toString、equals和hashCode方法。</u>
+- <u>**@Data**：**相当于@Getter、@Setter、@ToString、@EqualsAndHashCode的组合，同时生成getter、setter、toString、equals和hashCode方法。**</u>
 
 
 
-- **@NoArgsConstructor**：为类生成一个无参构造函数。
-- **@AllArgsConstructor**：为类生成一个全参构造函数，即包含所有成员变量的构造函数。
+- **@NoArgsConstructor**：**为类生成一个无参构造函数。**
+- **@AllArgsConstructor**：**为类生成一个全参构造函数，即包含所有成员变量的构造函数。**
 
 
 
-- **@RequiredArgsConstructor**：为类生成一个带有必需参数的构造函数，这些参数是由final修饰或者标记了@NonNull的成员变量。
-- **@Builder**：为类生成一个Builder模式的API，用于创建不可变对象和复杂对象。
+- **@RequiredArgsConstructor**：为类生成一个**带有必需参数的构造函数**，这些参数是**由final修饰**或者**标记了@NonNull**的成员变量。
+- **@Builder**：为类生成一个**Builder模式的API**，用于**创建不可变对象和复杂对象**。
 
 
 
 - @SneakyThrows：允许在方法中抛出检查型异常，而无需在方法签名中声明。
-- @Slf4j：为类生成一个SLF4J（Simple Logging Facade for Java）日志实例。
-- @Cleanup：自动为资源（如文件、流等）添加try-with-resources语句，确保资源被正确关闭。
-- @Value：相当于将@Data、@AllArgsConstructor、@NoArgsConstructor等注解应用于不可变类（即类的所有字段都是final的）。
+- **@Slf4j：为类生成一个SLF4J（Simple Logging Facade for Java）日志实例。**
+- **@Cleanup：自动为资源（如文件、流等）添加try-with-resources语句，确保资源被正确关闭。**
+
+
+
+// TODO 不可变类是什么？将所有的属性都应用于final字段会带来什么影响？
+
+- **@Value**：相当于**将@Data、@AllArgsConstructor、@NoArgsConstructor等**注解**应用于不可变类**（即**类的所有字段都是final的**）。
 
 ## 使用方式
 

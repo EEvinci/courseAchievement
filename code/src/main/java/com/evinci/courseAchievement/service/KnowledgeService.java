@@ -1,9 +1,11 @@
-package courseAchievement.service;
+package com.evinci.courseAchievement.service;
 
 import java.util.List;
-import courseAchievement.exception.ResourceNotFoundException;
-import courseAchievement.formbean.KnowledgeForm;
-import courseAchievement.entity.KnowledgeEntity;;
+
+import com.evinci.courseAchievement.entity.KnowledgeEntity;
+import com.evinci.courseAchievement.exception.ResourceNotFoundException;
+import com.evinci.courseAchievement.formbean.KnowledgeForm;
+;
 
 public interface KnowledgeService {
 

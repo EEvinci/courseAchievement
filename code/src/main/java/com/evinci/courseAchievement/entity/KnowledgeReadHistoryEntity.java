@@ -1,4 +1,4 @@
-package courseAchievement.entity;
+package com.evinci.courseAchievement.entity;
 
 import java.security.Timestamp;
 

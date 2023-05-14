@@ -1,4 +1,4 @@
-package courseAchievement.result;
+package com.evinci.courseAchievement.result;
 
 public enum ResponseMsg {
     SUCCESS("200", "操作成功"),

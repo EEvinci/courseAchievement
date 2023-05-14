@@ -1,9 +1,9 @@
-package courseAchievement.controller;
+package com.evinci.courseAchievement.controller;
 
-import courseAchievement.entity.KnowledgeReadHistoryEntity;
-import courseAchievement.result.ResponseData;
-import courseAchievement.result.ResponseMsg;
-import courseAchievement.service.KnowledgeReadHistoryService;
+import com.evinci.courseAchievement.entity.KnowledgeReadHistoryEntity;
+import com.evinci.courseAchievement.result.ResponseData;
+import com.evinci.courseAchievement.result.ResponseMsg;
+import com.evinci.courseAchievement.service.KnowledgeReadHistoryService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

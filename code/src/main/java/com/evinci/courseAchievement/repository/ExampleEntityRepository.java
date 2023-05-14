@@ -1,10 +1,10 @@
-package courseAchievement.repository;
+package com.evinci.courseAchievement.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import courseAchievement.entity.ExampleEntity;
+import com.evinci.courseAchievement.entity.ExampleEntity;
 
 /**
  * @author evinci

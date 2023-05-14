@@ -1,9 +1,9 @@
-package courseAchievement.service;
+package com.evinci.courseAchievement.service;
 
 import java.util.List;
-import courseAchievement.exception.ResourceNotFoundException;
-import courseAchievement.formbean.CourseForm;
-import courseAchievement.entity.CourseEntity;;
+import com.evinci.courseAchievement.exception.ResourceNotFoundException;
+import com.evinci.courseAchievement.formbean.CourseForm;
+import com.evinci.courseAchievement.entity.CourseEntity;;
 
 public interface CourseService {
 
@@ -15,11 +15,10 @@ public interface CourseService {
     public List<CourseForm> findAllCourse() throws ResourceNotFoundException;
 
     // 根据课程id查找课程
-    public CourseForm findCourseByIid(Integer id) throws ResourceNotFoundException;
-
-    // 用于根据提供的CourseForm对象的属性来过滤和查找课程
-    public List<CourseForm> findCourse(CourseForm courseForm) throws ResourceNotFoundException;
+    public CourseForm findCourseById(Integer id) throws ResourceNotFoundException;
 
     public Integer updateOneCourse(CourseEntity courseEntity) throws ResourceNotFoundException;
 
+    // 用于根据提供的CourseForm对象的属性来过滤和查找课程
+    public List<CourseForm> findCourse(CourseForm courseForm) throws ResourceNotFoundException;
 }

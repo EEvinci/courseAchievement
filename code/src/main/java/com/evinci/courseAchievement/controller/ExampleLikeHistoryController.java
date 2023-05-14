@@ -1,9 +1,9 @@
-package courseAchievement.controller;
+package com.evinci.courseAchievement.controller;
 
-import courseAchievement.entity.ExampleLikeHistoryEntity;
-import courseAchievement.result.ResponseData;
-import courseAchievement.result.ResponseMsg;
-import courseAchievement.service.ExampleLikeHistoryService;
+import com.evinci.courseAchievement.entity.ExampleLikeHistoryEntity;
+import com.evinci.courseAchievement.result.ResponseData;
+import com.evinci.courseAchievement.result.ResponseMsg;
+import com.evinci.courseAchievement.service.ExampleLikeHistoryService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

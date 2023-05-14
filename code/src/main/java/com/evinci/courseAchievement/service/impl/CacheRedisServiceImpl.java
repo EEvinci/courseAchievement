@@ -1,4 +1,4 @@
-package courseAchievement.service.impl;
+package com.evinci.courseAchievement.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;

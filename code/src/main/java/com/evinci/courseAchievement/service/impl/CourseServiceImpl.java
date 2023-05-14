@@ -1,4 +1,4 @@
-package courseAchievement.service.impl;
+package com.evinci.courseAchievement.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,11 +6,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import courseAchievement.service.CourseService;
-import courseAchievement.exception.ResourceNotFoundException;
-import courseAchievement.formbean.CourseForm;
-import courseAchievement.entity.CourseEntity;
-import courseAchievement.repository.CourseEntityRepository;
+import com.evinci.courseAchievement.service.CourseService;
+import com.evinci.courseAchievement.exception.ResourceNotFoundException;
+import com.evinci.courseAchievement.formbean.CourseForm;
+import com.evinci.courseAchievement.entity.CourseEntity;
+import com.evinci.courseAchievement.repository.CourseEntityRepository;
 
 @Service
 public class CourseServiceImpl implements CourseService {
@@ -53,7 +53,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public CourseForm findCourseByIid(Integer id) throws ResourceNotFoundException {
+    public CourseForm findCourseById(Integer id) throws ResourceNotFoundException {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'findCourseByIid'");
     }

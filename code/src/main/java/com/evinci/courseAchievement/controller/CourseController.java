@@ -1,7 +1,7 @@
-package courseAchievement.controller;
+package com.evinci.courseAchievement.controller;
 
-import courseAchievement.entity.CourseEntity;
-import courseAchievement.repository.CourseEntityRepository;
+import com.evinci.courseAchievement.repository.CourseEntityRepository;
+import com.evinci.courseAchievement.entity.CourseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

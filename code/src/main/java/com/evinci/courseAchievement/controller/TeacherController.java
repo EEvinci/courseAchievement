@@ -1,7 +1,7 @@
-package courseAchievement.controller;
+package com.evinci.courseAchievement.controller;
 
-import courseAchievement.entity.TeacherEntity;
-import courseAchievement.repository.TeacherEntityRepository;
+import com.evinci.courseAchievement.repository.TeacherEntityRepository;
+import com.evinci.courseAchievement.entity.TeacherEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

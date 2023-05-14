@@ -1,8 +1,8 @@
-package courseAchievement.repository;
+package com.evinci.courseAchievement.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import courseAchievement.entity.LabelGroupEntity;
+import com.evinci.courseAchievement.entity.LabelGroupEntity;
 
 import java.util.List;
 

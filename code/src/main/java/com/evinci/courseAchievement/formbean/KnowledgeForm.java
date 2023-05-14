@@ -1,4 +1,4 @@
-package courseAchievement.formbean;
+package com.evinci.courseAchievement.formbean;
 
 public class KnowledgeForm {
     private  int id;

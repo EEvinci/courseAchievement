@@ -1,7 +1,7 @@
-package courseAchievement.service;
+package com.evinci.courseAchievement.service;
 
-import courseAchievement.entity.KnowledgeReadHistoryEntity;
-import courseAchievement.exception.ResourceNotFoundException;
+import com.evinci.courseAchievement.exception.ResourceNotFoundException;
+import com.evinci.courseAchievement.entity.KnowledgeReadHistoryEntity;
 import org.springframework.data.domain.Page;
 
 import java.util.List;

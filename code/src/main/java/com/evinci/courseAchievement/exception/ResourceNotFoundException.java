@@ -1,4 +1,4 @@
-package courseAchievement.exception;
+package com.evinci.courseAchievement.exception;
 
 public class ResourceNotFoundException extends RuntimeException{
     // 输出异常信息

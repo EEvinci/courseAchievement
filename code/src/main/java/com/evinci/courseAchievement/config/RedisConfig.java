@@ -1,4 +1,4 @@
-package courseAchievement.config;
+package com.evinci.courseAchievement.config;
 
 public class RedisConfig {
     

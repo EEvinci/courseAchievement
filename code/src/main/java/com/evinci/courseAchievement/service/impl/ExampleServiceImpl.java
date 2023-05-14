@@ -1,13 +1,13 @@
-package courseAchievement.service.impl;
+package com.evinci.courseAchievement.service.impl;
 
 import java.util.List;
 import java.util.ArrayList;
 
-import courseAchievement.service.ExampleService;
-import courseAchievement.exception.ResourceNotFoundException;
-import courseAchievement.formbean.ExampleForm;
-import courseAchievement.entity.ExampleEntity;
-import courseAchievement.repository.ExampleEntityRepository;
+import com.evinci.courseAchievement.formbean.ExampleForm;
+import com.evinci.courseAchievement.service.ExampleService;
+import com.evinci.courseAchievement.exception.ResourceNotFoundException;
+import com.evinci.courseAchievement.entity.ExampleEntity;
+import com.evinci.courseAchievement.repository.ExampleEntityRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

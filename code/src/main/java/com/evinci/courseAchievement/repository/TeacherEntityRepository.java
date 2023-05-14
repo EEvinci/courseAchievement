@@ -1,10 +1,10 @@
-package courseAchievement.repository;
+package com.evinci.courseAchievement.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import courseAchievement.entity.TeacherEntity;
+import com.evinci.courseAchievement.entity.TeacherEntity;
 
 public interface TeacherEntityRepository extends JpaRepository<TeacherEntity, Integer> {
     // 根据教师编号查询

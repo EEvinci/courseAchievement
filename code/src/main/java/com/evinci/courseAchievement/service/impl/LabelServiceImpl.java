@@ -1,17 +1,17 @@
-package courseAchievement.service.impl;
+package com.evinci.courseAchievement.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.evinci.courseAchievement.formbean.LabelForm;
+import com.evinci.courseAchievement.repository.LabelEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import courseAchievement.exception.ResourceNotFoundException;
+import com.evinci.courseAchievement.exception.ResourceNotFoundException;
 
-import courseAchievement.service.LabelService;
-import courseAchievement.formbean.LabelForm;
-import courseAchievement.entity.LabelEntity;
-import courseAchievement.repository.LabelEntityRepository;
+import com.evinci.courseAchievement.service.LabelService;
+import com.evinci.courseAchievement.entity.LabelEntity;
 
 @Service
 public class LabelServiceImpl implements LabelService {
@@ -37,7 +37,7 @@ public class LabelServiceImpl implements LabelService {
     }
 
     @Override
-    public LabelForm findLabelById(Integer iid) throws ResourceNotFoundException {
+    public LabelForm findLabelById(Integer id) throws ResourceNotFoundException {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'findLabelById'");
     }
@@ -55,7 +55,7 @@ public class LabelServiceImpl implements LabelService {
     }
 
     @Override
-    public Integer deleteOneLabel(Integer iid) throws ResourceNotFoundException {
+    public Integer deleteOneLabel(Integer id) throws ResourceNotFoundException {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'deleteOneLabel'");
     }

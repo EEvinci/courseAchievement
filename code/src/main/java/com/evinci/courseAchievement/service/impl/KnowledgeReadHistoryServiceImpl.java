@@ -1,15 +1,14 @@
-package courseAchievement.service.impl;
+package com.evinci.courseAchievement.service.impl;
 
-import courseAchievement.entity.KnowledgeReadHistoryEntity;
-import courseAchievement.exception.ResourceNotFoundException;
-import courseAchievement.repository.KnowledgeReadHistoryEntityRepository;
-import courseAchievement.service.KnowledgeReadHistoryService;
+import com.evinci.courseAchievement.entity.KnowledgeReadHistoryEntity;
+import com.evinci.courseAchievement.exception.ResourceNotFoundException;
+import com.evinci.courseAchievement.repository.KnowledgeReadHistoryEntityRepository;
+import com.evinci.courseAchievement.service.KnowledgeReadHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;

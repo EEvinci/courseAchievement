@@ -1,17 +1,17 @@
-package courseAchievement.service.impl;
+package com.evinci.courseAchievement.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.evinci.courseAchievement.formbean.TeacherForm;
+import com.evinci.courseAchievement.repository.TeacherEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import courseAchievement.exception.ResourceNotFoundException;
+import com.evinci.courseAchievement.exception.ResourceNotFoundException;
 
-import courseAchievement.service.TeacherService;
-import courseAchievement.formbean.TeacherForm;
-import courseAchievement.entity.TeacherEntity;
-import courseAchievement.repository.TeacherEntityRepository;
+import com.evinci.courseAchievement.service.TeacherService;
+import com.evinci.courseAchievement.entity.TeacherEntity;
 
 @Service
 public class TeacherServiceImpl implements TeacherService {
@@ -37,7 +37,7 @@ public class TeacherServiceImpl implements TeacherService {
         return newList;
     }
     @Override
-    public TeacherForm findTeacherById(Integer iid) throws ResourceNotFoundException {
+    public TeacherForm findTeacherById(Integer id) throws ResourceNotFoundException {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'findTeacherById'");
     }
@@ -57,7 +57,7 @@ public class TeacherServiceImpl implements TeacherService {
         throw new UnsupportedOperationException("Unimplemented method 'createOneTeacher'");
     }
     @Override
-    public Integer deleteOneTeacher(Integer iid) throws ResourceNotFoundException {
+    public Integer deleteOneTeacher(Integer id) throws ResourceNotFoundException {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'deleteOneTeacher'");
     }
