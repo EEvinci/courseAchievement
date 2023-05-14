@@ -41,13 +41,13 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public Integer createOneCourse(CourseEntity courseEntity) throws ResourceNotFoundException {
+    public Integer createCourse(CourseEntity courseEntity) throws ResourceNotFoundException {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'createOneCourse'");
     }
 
     @Override
-    public Integer deleteOneCourse(Integer id) throws ResourceNotFoundException {
+    public Integer deleteCourse(Integer id) throws ResourceNotFoundException {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'deleteOneCourse'");
     }

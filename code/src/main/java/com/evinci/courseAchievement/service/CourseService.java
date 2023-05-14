@@ -7,9 +7,9 @@ import com.evinci.courseAchievement.entity.CourseEntity;;
 
 public interface CourseService {
 
-    public Integer createOneCourse(CourseEntity courseEntity) throws ResourceNotFoundException;
+    public Integer createCourse(CourseEntity courseEntity) throws ResourceNotFoundException;
 
-    public Integer deleteOneCourse(Integer id) throws ResourceNotFoundException;
+    public Integer deleteCourse(Integer id) throws ResourceNotFoundException;
 
     // 查找所有的课程
     public List<CourseForm> findAllCourse() throws ResourceNotFoundException;

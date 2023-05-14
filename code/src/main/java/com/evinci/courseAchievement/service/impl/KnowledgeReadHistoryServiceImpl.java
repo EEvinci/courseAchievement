@@ -36,7 +36,7 @@ public class KnowledgeReadHistoryServiceImpl implements KnowledgeReadHistoryServ
     }
 
     @Override
-    public Page<KnowledgeReadHistoryEntity> findByKnowledgeIid(Integer knowledgeIid, int pageNum, int pageSize)
+    public Page<KnowledgeReadHistoryEntity> findByKnowledgeId(Integer knowledgeIid, int pageNum, int pageSize)
             throws ResourceNotFoundException {
         // 也可以把sort写上
         Pageable pageable = PageRequest.of(pageNum, pageSize);

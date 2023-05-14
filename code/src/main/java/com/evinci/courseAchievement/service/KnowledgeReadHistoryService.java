@@ -11,7 +11,7 @@ public interface KnowledgeReadHistoryService {
     Integer getCountOfReadHistory(Integer knowledgeIid) throws ResourceNotFoundException;
 
     // 分页查询
-    Page<KnowledgeReadHistoryEntity> findByKnowledgeIid(Integer knowledgeIid, int pageNum, int pageSize)
+    Page<KnowledgeReadHistoryEntity> findByKnowledgeId(Integer knowledgeIid, int pageNum, int pageSize)
             throws ResourceNotFoundException;
 
     // 添加一条记录

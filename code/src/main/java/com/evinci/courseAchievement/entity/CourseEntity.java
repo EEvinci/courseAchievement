@@ -50,6 +50,7 @@ public class CourseEntity {
   @Column(name = "course_book")
   private String courseBook;
 
+  //TODO:ManyToOne relation
   @Column(name = "course_teacher_id")
   private int courseTeacherId;
 

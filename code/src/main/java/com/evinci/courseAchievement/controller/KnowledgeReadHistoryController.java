@@ -1,8 +1,8 @@
 package com.evinci.courseAchievement.controller;
 
 import com.evinci.courseAchievement.entity.KnowledgeReadHistoryEntity;
-import com.evinci.courseAchievement.result.ResponseData;
-import com.evinci.courseAchievement.result.ResponseMsg;
+import com.evinci.courseAchievement.response.ResponseData;
+import com.evinci.courseAchievement.response.ResponseMsg;
 import com.evinci.courseAchievement.service.KnowledgeReadHistoryService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +30,9 @@ public class KnowledgeReadHistoryController {
 
         Integer count = knowledgeReadHistoryService.getCountOfReadHistory(knowledgeReadHistoryEntity.getKnowledgeId());
         if (count >= 0) {
-            return new ResponseData(ResponseMsg.SUCCESS, count);
+            return ResponseData.of(ResponseMsg.SUCCESS, count);
         } else {
-            return new ResponseData(ResponseMsg.FAILED, count);
+            return ResponseData.of(ResponseMsg.FAILED, count);
         }
     }
 
@@ -44,10 +44,10 @@ public class KnowledgeReadHistoryController {
     @PostMapping("/query")
     public ResponseData findReadHistoryByKnowledgeIid(@RequestBody Map temp) {
         Page<KnowledgeReadHistoryEntity> knowledgeReadHistoryEntityPage = knowledgeReadHistoryService
-                .findByKnowledgeIid((Integer) temp.get("knowledgeIid"), (Integer) temp.get("pageNum"),
+                .findByKnowledgeId((Integer) temp.get("knowledgeId"), (Integer) temp.get("pageNum"),
                         (Integer) temp.get("pageSize"));
         // 缺少一个错误处理
-        return new ResponseData(ResponseMsg.SUCCESS, knowledgeReadHistoryEntityPage);
+        return ResponseData.of(ResponseMsg.SUCCESS, knowledgeReadHistoryEntityPage);
     }
 
     /*
@@ -57,9 +57,9 @@ public class KnowledgeReadHistoryController {
     public ResponseData addOneRecord(@RequestBody KnowledgeReadHistoryEntity knowledgeReadHistoryEntity) {
         int flag = knowledgeReadHistoryService.addOneRecord(knowledgeReadHistoryEntity);
         if (flag > 0) {
-            return new ResponseData(ResponseMsg.SUCCESS, flag);
+            return ResponseData.of(ResponseMsg.SUCCESS, flag);
         } else {
-            return new ResponseData(ResponseMsg.FAILED, flag);
+            return ResponseData.of(ResponseMsg.FAILED, flag);
         }
     }
 
@@ -70,9 +70,9 @@ public class KnowledgeReadHistoryController {
     public ResponseData queryMax20Example() {
         List<String> temp = knowledgeReadHistoryService.getTopScoringKnowledge("read_count_knowledge");
         if (temp.size() > 0) {
-            return new ResponseData(ResponseMsg.SUCCESS, temp);
+            return ResponseData.of(ResponseMsg.SUCCESS, temp);
         } else {
-            return new ResponseData(ResponseMsg.FAILED, temp);
+            return ResponseData.of(ResponseMsg.FAILED, temp);
         }
 
     }

@@ -1,8 +1,8 @@
 package com.evinci.courseAchievement.controller;
 
 import com.evinci.courseAchievement.entity.ExampleLikeHistoryEntity;
-import com.evinci.courseAchievement.result.ResponseData;
-import com.evinci.courseAchievement.result.ResponseMsg;
+import com.evinci.courseAchievement.response.ResponseData;
+import com.evinci.courseAchievement.response.ResponseMsg;
 import com.evinci.courseAchievement.service.ExampleLikeHistoryService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +28,9 @@ public class ExampleLikeHistoryController {
     public ResponseData findCountOfLike(@RequestBody ExampleLikeHistoryEntity exampleLikeHistoryEntity) {
         int count = exampleLikeHistoryService.getCountOfExampleLike(exampleLikeHistoryEntity.getExampleId());
         if (count > 0) {
-            return new ResponseData(ResponseMsg.SUCCESS, count);
+            return ResponseData.of(ResponseMsg.SUCCESS, count);
         } else {
-            return new ResponseData(ResponseMsg.FAILED, count);
+            return ResponseData.of(ResponseMsg.FAILED, count);
         }
 
     }
@@ -40,9 +40,9 @@ public class ExampleLikeHistoryController {
     public ResponseData addOneRecord(@RequestBody ExampleLikeHistoryEntity exampleLikeHistoryEntity) {
         int flag = exampleLikeHistoryService.addOneRecordLikeHistory(exampleLikeHistoryEntity);
         if (flag == 1) {
-            return new ResponseData(ResponseMsg.SUCCESS, flag);
+            return ResponseData.of(ResponseMsg.SUCCESS, flag);
         } else {
-            return new ResponseData(ResponseMsg.FAILED, flag);
+            return ResponseData.of(ResponseMsg.FAILED, flag);
         }
     }
 
@@ -51,9 +51,9 @@ public class ExampleLikeHistoryController {
     public ResponseData queryMax20Example() {
         List<String> temp = exampleLikeHistoryService.getTopScoringExample("like_count_example");
         if (temp.size() > 0) {
-            return new ResponseData(ResponseMsg.SUCCESS, temp);
+            return ResponseData.of(ResponseMsg.SUCCESS, temp);
         } else {
-            return new ResponseData(ResponseMsg.FAILED, temp);
+            return ResponseData.of(ResponseMsg.FAILED, temp);
         }
 
     }
