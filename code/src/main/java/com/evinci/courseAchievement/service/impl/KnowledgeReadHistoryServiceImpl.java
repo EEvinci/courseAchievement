@@ -49,7 +49,8 @@ public class KnowledgeReadHistoryServiceImpl implements KnowledgeReadHistoryServ
         TimeZone timeZone = TimeZone.getTimeZone("GMT+8");
         Calendar calendar = Calendar.getInstance(timeZone);
         Timestamp timestamp = new Timestamp(calendar.getTime().getTime());
-        knowledgeReadHistoryEntity.getBuilder().setReadTimestamp(timestamp);
+        // FIXME: still bug
+//        knowledgeReadHistoryEntity.getBuilder().setReadTimestamp(timestamp);
         try {
             // 由于knowledge 只需要++即可，不需要判断是否先前已经存在
             cacheRedisService.addOneRecordKnowledge(knowledgeReadHistoryEntity.getKnowledgeId());
