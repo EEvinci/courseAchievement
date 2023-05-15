@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+
 @Service
 public class CacheRedisServiceImpl {
     @Autowired
@@ -23,7 +24,6 @@ public class CacheRedisServiceImpl {
         return Integer.parseInt(value);
     }
 
-    // example ++
     public Integer addOneRecordExample(Integer exampleIid) {
 
         String key = LIKE_COUNT_PREFIX;
@@ -33,7 +33,6 @@ public class CacheRedisServiceImpl {
         return 1;
     }
 
-    // knowledge ++
     public Integer addOneRecordKnowledge(Integer knowledgeIid) {
         String key = READ_COUNT_PREFIX;
         String member = "knowledge_" + knowledgeIid;

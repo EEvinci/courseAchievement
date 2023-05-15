@@ -43,7 +43,6 @@ public class ExampleLikeHistoryServiceImpl implements ExampleLikeHistoryService 
             flagCache = 0;
         }
         try {
-
             System.out.println(Id);
             exampleLikeHistoryEntity.setId(Id);
             TimeZone timeZone = TimeZone.getTimeZone("GMT+8");

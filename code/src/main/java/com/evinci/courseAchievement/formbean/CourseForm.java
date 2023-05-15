@@ -1,5 +1,6 @@
 package com.evinci.courseAchievement.formbean;
 
+// TODO 对所有的formbean添加Lombok注解，使用流式方法在service包的impl中进行流式填充
 public class CourseForm {
     private int id;
     private String courseId;

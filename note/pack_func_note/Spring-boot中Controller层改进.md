@@ -20,12 +20,12 @@ controller接受来自用户的请求，并处理用户输入的参数，然后�
 
 ## controller中的API设计应该遵循RESTful风格
 
-(uniform resource identifier)URI 统一资源标识符
+(uniform resource identifier)**URI 统一资源标识符**
 
-URI表示的应该是资源
+URI表示的应该是**资源**
 
-而HTTP方法(例如GET POST PUT DELETE)表示对资源的操作
+而HTTP方法(例如GET POST PUT DELETE)表示**对资源的操作**, **是动词**
 
-所以在RestMapping和GetMapping/PostMapping/PutMapping/DeleteMapping中的URI表示应该都是名词
+所以在RestMapping和GetMapping/PostMapping/PutMapping/DeleteMapping中的URI表示应该**都是名词**
 
 @GetMapping("")

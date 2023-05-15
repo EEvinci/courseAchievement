@@ -19,6 +19,7 @@ public interface CourseService {
 
     public Integer updateOneCourse(CourseEntity courseEntity) throws ResourceNotFoundException;
 
+
     // 用于根据提供的CourseForm对象的属性来过滤和查找课程
     public List<CourseForm> findCourse(CourseForm courseForm) throws ResourceNotFoundException;
 }
