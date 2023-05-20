@@ -1,17 +1,14 @@
 package com.evinci.courseAchievement.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
+import java.util.HashSet;
+import java.util.Set;
 /**
  * @author evinci
  * @version 1.0
@@ -21,6 +18,10 @@ import lombok.AllArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+
+/**
+ * 标签组
+ */
 @Table(name = "label_group", schema = "courseachievement", catalog = "")
 public class LabelGroupEntity {
   @Id
@@ -33,5 +34,10 @@ public class LabelGroupEntity {
 
   @Column(name = "label_group_content")
   private String labelGroupContent;
+
+  
+  @ManyToMany(mappedBy = "LabelGroupId")
+  @Builder.Default
+  private Set<LabelEntity> labels = new HashSet<>();
 
 }

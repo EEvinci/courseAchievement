@@ -19,8 +19,12 @@ import lombok.AllArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "knowledge_read_history", schema = "courseachievement", catalog = "")
-public class KnowledgeReadHistoryEntity {
+
+/**
+ *
+ */
+@Table(name = "reading_record_history", schema = "courseachievement", catalog = "")
+public class ReadingRecordEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")

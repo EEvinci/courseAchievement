@@ -20,8 +20,12 @@ import java.sql.Timestamp;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "example_like_history", schema = "courseachievement", catalog = "")
-public class ExampleLikeHistoryEntity {
+
+/**
+ *
+ */
+@Table(name = "like_record_history", schema = "courseachievement", catalog = "")
+public class LikeRecordEntity {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

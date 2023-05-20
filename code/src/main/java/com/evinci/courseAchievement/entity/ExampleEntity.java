@@ -3,13 +3,7 @@ package com.evinci.courseAchievement.entity;
 import java.util.Set;
 import java.util.HashSet;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.Builder;
 import lombok.Data;
@@ -25,6 +19,9 @@ import lombok.AllArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * 案例实体
+ */
 @Table(name = "example", schema = "courseachievement", catalog = "")
 public class ExampleEntity {
     @Id
@@ -38,8 +35,8 @@ public class ExampleEntity {
     @Column(name = "example_content")
     private String exampleContent;
 
-    // 多对多关系 知识点与案例
+    // 多对多关系 案例与知识点
     @ManyToMany(mappedBy = "examples")
     @Builder.Default
-    private Set<KnowledgeEntity> knowledgePoint = new HashSet<>();
+    private Set<KnowledgeEntity> knowledges = new HashSet<>();
 }

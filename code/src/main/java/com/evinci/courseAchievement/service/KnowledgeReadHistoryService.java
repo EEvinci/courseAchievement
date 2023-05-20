@@ -1,7 +1,7 @@
 package com.evinci.courseAchievement.service;
 
 import com.evinci.courseAchievement.exception.ResourceNotFoundException;
-import com.evinci.courseAchievement.entity.KnowledgeReadHistoryEntity;
+import com.evinci.courseAchievement.entity.ReadingRecordEntity;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
@@ -11,11 +11,11 @@ public interface KnowledgeReadHistoryService {
     Integer getCountOfReadHistory(Integer knowledgeIid) throws ResourceNotFoundException;
 
     // 分页查询
-    Page<KnowledgeReadHistoryEntity> findByKnowledgeId(Integer knowledgeIid, int pageNum, int pageSize)
+    Page<ReadingRecordEntity> findByKnowledgeId(Integer knowledgeIid, int pageNum, int pageSize)
             throws ResourceNotFoundException;
 
     // 添加一条记录
-    public Integer addOneRecord(KnowledgeReadHistoryEntity knowledgeReadHistoryEntity) throws ResourceNotFoundException;
+    public Integer addOneRecord(ReadingRecordEntity readingRecordEntity) throws ResourceNotFoundException;
 
     // 返回排名最高的 20 条知识点
     public List<String> getTopScoringKnowledge(String key) throws ResourceNotFoundException;

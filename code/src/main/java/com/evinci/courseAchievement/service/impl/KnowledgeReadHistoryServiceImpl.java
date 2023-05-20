@@ -1,6 +1,6 @@
 package com.evinci.courseAchievement.service.impl;
 
-import com.evinci.courseAchievement.entity.KnowledgeReadHistoryEntity;
+import com.evinci.courseAchievement.entity.ReadingRecordEntity;
 import com.evinci.courseAchievement.exception.ResourceNotFoundException;
 import com.evinci.courseAchievement.repository.KnowledgeReadHistoryEntityRepository;
 import com.evinci.courseAchievement.service.KnowledgeReadHistoryService;
@@ -36,7 +36,7 @@ public class KnowledgeReadHistoryServiceImpl implements KnowledgeReadHistoryServ
     }
 
     @Override
-    public Page<KnowledgeReadHistoryEntity> findByKnowledgeId(Integer knowledgeIid, int pageNum, int pageSize)
+    public Page<ReadingRecordEntity> findByKnowledgeId(Integer knowledgeIid, int pageNum, int pageSize)
             throws ResourceNotFoundException {
         // 也可以把sort写上
         Pageable pageable = PageRequest.of(pageNum, pageSize);
@@ -44,7 +44,7 @@ public class KnowledgeReadHistoryServiceImpl implements KnowledgeReadHistoryServ
     }
 
     @Override
-    public Integer addOneRecord(KnowledgeReadHistoryEntity knowledgeReadHistoryEntity) throws ResourceNotFoundException {
+    public Integer addOneRecord(ReadingRecordEntity readingRecordEntity) throws ResourceNotFoundException {
         TimeZone timeZone = TimeZone.getTimeZone("GMT+8");
         Calendar calendar = Calendar.getInstance(timeZone);
         Timestamp timestamp = new Timestamp(calendar.getTime().getTime());
@@ -52,8 +52,8 @@ public class KnowledgeReadHistoryServiceImpl implements KnowledgeReadHistoryServ
 //        knowledgeReadHistoryEntity.getBuilder().setReadTimestamp(timestamp);
         try {
             // 由于knowledge 只需要++即可，不需要判断是否先前已经存在
-            cacheRedisService.addOneRecordKnowledge(knowledgeReadHistoryEntity.getKnowledgeId());
-            knowledgeReadHistoryEntityRepository.save(knowledgeReadHistoryEntity);
+            cacheRedisService.addOneRecordKnowledge(readingRecordEntity.getKnowledgeId());
+            knowledgeReadHistoryEntityRepository.save(readingRecordEntity);
         } catch (Exception e) {
             throw new ResourceNotFoundException("阅读记录添加时出错");
         }
