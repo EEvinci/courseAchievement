@@ -62,17 +62,6 @@ public class KnowledgeEntity {
   @Builder.Default
   private Set<KnowledgeEntity> followUps = new HashSet<>();
 
-
-  // 多对多关系 课程与知识点
-  @ManyToMany
-  @JoinTable(
-          name = "course_knowledge",
-          joinColumns = @JoinColumn(name = "knowledge_id"),
-          inverseJoinColumns = @JoinColumn(name = "course_id")
-  )
-  @Builder.Default
-  private Set<CourseEntity> courses = new HashSet<CourseEntity>();
-
   
   // 多对多关系 案例与知识点
   @ManyToMany
@@ -94,4 +83,15 @@ public class KnowledgeEntity {
   )
   @Builder.Default
   private Set<LabelEntity> labels = new HashSet<LabelEntity>();
+
+
+  // 多对多关系 课程与知识点
+// //   @ManyToMany
+// //   @JoinTable(
+// //           name = "course_knowledge",
+// //           joinColumns = @JoinColumn(name = "knowledge_id"),
+// //           inverseJoinColumns = @JoinColumn(name = "course_id")
+// //   )
+// //   @Builder.Default
+// //   private Set<CourseEntity> courses = new HashSet<CourseEntity>();
 }

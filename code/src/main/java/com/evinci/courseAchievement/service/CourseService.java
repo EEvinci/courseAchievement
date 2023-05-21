@@ -2,7 +2,7 @@ package com.evinci.courseAchievement.service;
 
 import java.util.List;
 import com.evinci.courseAchievement.exception.ResourceNotFoundException;
-import com.evinci.courseAchievement.formbean.CourseForm;
+import com.evinci.courseAchievement.formbean.CourseForm.AdminCreateCourseForm;
 import com.evinci.courseAchievement.entity.CourseEntity;;
 
 public interface CourseService {

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.evinci.courseAchievement.entity.LabelEntity;
 import com.evinci.courseAchievement.exception.ResourceNotFoundException;
-import com.evinci.courseAchievement.formbean.LabelForm;
+import com.evinci.courseAchievement.formbean.LabelForm.LabelForm;
 
 public interface LabelService {
 

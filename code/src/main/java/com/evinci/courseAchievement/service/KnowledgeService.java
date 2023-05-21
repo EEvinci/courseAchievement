@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.evinci.courseAchievement.entity.KnowledgeEntity;
 import com.evinci.courseAchievement.exception.ResourceNotFoundException;
-import com.evinci.courseAchievement.formbean.KnowledgeForm;
+import com.evinci.courseAchievement.formbean.KnowledgeForm.KnowledgeForm;
 ;
 
 public interface KnowledgeService {

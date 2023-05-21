@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.evinci.courseAchievement.service.CourseService;
 import com.evinci.courseAchievement.exception.ResourceNotFoundException;
-import com.evinci.courseAchievement.formbean.CourseForm;
+import com.evinci.courseAchievement.formbean.CourseForm.AdminCreateCourseForm;
 import com.evinci.courseAchievement.entity.CourseEntity;
 import com.evinci.courseAchievement.repository.CourseEntityRepository;
 

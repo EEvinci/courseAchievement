@@ -65,19 +65,27 @@ public class CourseEntity {
     以上的权限控制在service层实现
   */
   @ManyToMany(mappedBy = "courses")
-  @Builder.Default
+  @Builder.Default  // 为集合字段提供默认值，避免遭遇空指针异常
   private Set<UserEntity> users = new HashSet<>();
 
 
   // 多对多关系 课程与标签
   @ManyToMany(mappedBy = "courses")  // 交给label中的courses属性管理多对多关系
-  @Builder.Default  // 为集合字段提供默认值，避免遭遇空指针异常
+  @Builder.Default  
   private Set<LabelEntity> labels = new HashSet<>();  // 集合字段，表示该课程对应的标签集合
 
 
-  // 多对多关系 课程与知识点
-  @ManyToMany(mappedBy = "courses")
-  @Builder.Default  
-  private Set<KnowledgeEntity> knowledges = new HashSet<>();
+  /*
+    多对多关系 课程与知识点
+
+    细想了一下，课程没必要对应知识点
+    看似课程和知识点的关联是最密切的，但是实际上课程和知识点的关联是最松散的
+    一个课程对应大几百个知识点，存储起来太过于庞大
+    
+    而课程已经和标签对应了，标签对应的也有知识点，所以课程和知识点的关联可以通过标签来实现
+  */
+////  @ManyToMany(mappedBy = "courses")
+////  @Builder.Default  
+////  private Set<KnowledgeEntity> knowledges = new HashSet<>();
 
 }
