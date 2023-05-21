@@ -3,7 +3,13 @@ package com.evinci.courseAchievement.entity;
 import java.util.Set;
 import java.util.HashSet;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 import lombok.Builder;
 import lombok.Data;
@@ -26,7 +32,7 @@ import lombok.AllArgsConstructor;
 public class ExampleEntity {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @Column(name = "example_num")

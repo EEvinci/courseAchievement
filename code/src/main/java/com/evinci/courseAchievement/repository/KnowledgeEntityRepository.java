@@ -12,15 +12,10 @@ import java.util.List;
  */
 public interface KnowledgeEntityRepository extends JpaRepository<KnowledgeEntity, Integer> {
     // 根据知识点编号查询
-    List<KnowledgeEntity> findByKnowledgeNumStringLike(String knowledgeNumString);
+    KnowledgeEntity findByKnowledgeNumString(String knowledgeNum);
 
     // 根据知识点名称查询
-    List<KnowledgeEntity> findByKnowledgeVitalString(String knowledgeVitalString);
+    KnowledgeEntity findByKnowledgeTitle(String knowledgeTitle);
 
-    // 根据知识点描述查询
-    List<KnowledgeEntity> findByKnowledgeDescriptionString(String knowledgeDescriptionString);
-
-    // 根据知识点编号删除
-    void deleteById(String knowledgeNum);
 
 }

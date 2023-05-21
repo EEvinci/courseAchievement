@@ -17,45 +17,9 @@ public class ExampleServiceImpl implements ExampleService {
     @Autowired
     private ExampleEntityRepository exampleEntityRepository;
 
-    @Override
-    public List<ExampleForm> findAllExample() throws ResourceNotFoundException {
-        List<ExampleEntity> oldList = exampleEntityRepository.findAll();
-        if (oldList.size() == 0) {
-            throw new ResourceNotFoundException("No example found!");
-        }
-        List<ExampleForm> newList = new ArrayList<>();
-        for (int i = 0; i < oldList.size(); i++) {
-            ExampleForm exampleForm = new ExampleForm();
-            exampleForm.setIid(oldList.get(i).getId());
-            exampleForm.setExampleId((oldList.get(i)).getExampleNum());
-            exampleForm.setExampleUrl(oldList.get(i).getExampleContent());
-            newList.add(exampleForm);
-        }
-
-        return newList;
-    }
-
-    @Override
-    public ExampleForm findExampleById(Integer id) throws ResourceNotFoundException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findExampleById'");
-    }
-
-    @Override
-    public Integer updateOneExample(ExampleEntity exampleEntity) throws ResourceNotFoundException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateOneExample'");
-    }
 
     @Override
     public Integer createOneExample(ExampleEntity exampleEntity) throws ResourceNotFoundException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createOneExample'");
-    }
-
-    @Override
-    public Integer deleteOneExample(Integer id) throws ResourceNotFoundException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteOneExample'");
+        return null;
     }
 }

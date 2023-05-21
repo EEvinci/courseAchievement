@@ -22,19 +22,20 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 
 /**
- *
+ * 点赞记录实体
+ * 只有案例可以点赞
  */
 @Table(name = "like_record_history", schema = "courseachievement", catalog = "")
 public class LikeRecordEntity {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @Column(name = "user_id")
     private Integer userId;
 
-    @Column(name = "example_num")
+    @Column(name = "example_id")
     private Integer exampleId;
     
     @Column(name = "like_timestamp")

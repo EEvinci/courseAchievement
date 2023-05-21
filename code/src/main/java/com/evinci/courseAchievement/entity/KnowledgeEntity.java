@@ -5,13 +5,13 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 
 import lombok.Builder;
 import lombok.Data;
@@ -73,6 +73,7 @@ public class KnowledgeEntity {
   @Builder.Default
   private Set<CourseEntity> courses = new HashSet<CourseEntity>();
 
+  
   // 多对多关系 案例与知识点
   @ManyToMany
   @JoinTable(
@@ -82,6 +83,7 @@ public class KnowledgeEntity {
   )
   @Builder.Default
   private Set<ExampleEntity> examples = new HashSet<ExampleEntity>();
+
 
   // 多对多关系 知识点与标签
   @ManyToMany

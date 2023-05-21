@@ -13,14 +13,5 @@ import com.evinci.courseAchievement.entity.ExampleEntity;
 
 public interface ExampleEntityRepository extends JpaRepository<ExampleEntity, Integer> {
     // 根据案例编号查询
-    List<ExampleEntity> findByExampleNumString(String exampleNum);
-
-    // 根据案例内容查询
-    List<ExampleEntity> findByExampleNumStringLike(String exampleNum);
-
-    // 根据案例编号删除
-    List<ExampleEntity> findByExampleContentStringLike(String exampleContent);
-
-    // 根据案例编号删除
-    void deleteById(String exampleNum);
+    ExampleEntity findByExampleNum(String exampleNum);
 }

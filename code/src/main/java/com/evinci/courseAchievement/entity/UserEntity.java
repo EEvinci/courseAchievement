@@ -1,16 +1,14 @@
 package com.evinci.courseAchievement.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Column;
+import javax.persistence.*;
 
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -33,20 +31,38 @@ public class UserEntity {
     private String userName;
 
     @Column(name = "user_account")
-    private String userAccount;
+    private String userAccount;  // 老师的工号中有字母，学生的学号全是数字
 
     @Column(name = "user_password")
     private String userPassword;
-
-    /*
-    user_type中可以是teacher/student/admin
-     */
-    @Column(name = "user_type")
-    private String userType;
 
     @Column(name = "user_email")
     private String userEmail;
 
     @Column(name = "user_phone")
     private String userPhone;
+
+
+    /*
+    user_type中包含teacher/student/admin
+     */
+    public enum UserType {
+        TEACHER,
+        STUDENT,
+        ADMIN
+    }
+    @Column(name = "user_type")
+    @Enumerated(EnumType.STRING)  // String类型的枚举
+    private UserType userType;
+
+
+    // 多对多关系 用户与课程
+    // 在这里因为枚举的原因，所以之后在业务逻辑中要进行判断
+    // 比如添加课程：只有管理员能够添加课程
+    @ManyToMany
+    @JoinTable(name = "user_course",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id"))
+    @Builder.Default
+    private Set<CourseEntity> courses = new HashSet<>();
 }

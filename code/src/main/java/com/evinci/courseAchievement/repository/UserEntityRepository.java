@@ -6,15 +6,12 @@ import com.evinci.courseAchievement.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserEntityRepository extends JpaRepository<UserEntity, Integer> {
-    // 根据教师编号查询
-    List<UserEntity> findByTeacherNumStringLike(String teacherNumString);
 
-    // 根据教师姓名查询
-    UserEntity findByTeacherNameStringLike(String teacherNameString);
+    // 根据用户姓名查询
+    UserEntity findByUserName(String userName);
 
-    // 根据教师电话查询
-    UserEntity findByTeacherPhoneStringLike(String teacherPhoneSting);
+    // 根据用户工号查询
+    UserEntity findByUserAccount(String userAccount);
 
-    // 根据教师编号删除
-    void deleteById(String teacherNum);
+
 }

@@ -12,14 +12,6 @@ import java.util.List;
  */
 public interface LabelEntityRepository extends JpaRepository<LabelEntity, Integer> {
     // 根据标签编号查询
-    List<LabelEntity> findByLabelNumStringLike(String labelNumString);
+    LabelEntity findByLabelNum(String labelNum);
 
-    // 根据标签内容查询
-    List<LabelEntity> findByLabelContentStringLike(String labelContentString);
-
-    // 根据标签组编号查询
-    List<LabelEntity> findByLabelGroupId(int labelGroupId);
-
-    // 根据标签编号删除
-    void deleteById(String labelNum);
 }

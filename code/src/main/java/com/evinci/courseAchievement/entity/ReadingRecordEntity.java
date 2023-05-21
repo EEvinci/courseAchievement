@@ -21,13 +21,14 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 
 /**
- *
+ * 阅读记录实体
+ * 只记录知识点的阅读数量
  */
 @Table(name = "reading_record_history", schema = "courseachievement", catalog = "")
 public class ReadingRecordEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @Column(name = "user_id")

@@ -6,9 +6,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface KnowledgeReadHistoryEntityRepository extends JpaRepository<ReadingRecordEntity, Integer> {
+public interface ReadingRecordEntityRepository extends JpaRepository<ReadingRecordEntity, Integer> {
 
-    Integer countByKnowledgeIid(Integer knowledgeIid);
+    Integer countByKnowledgeId(Integer knowledgeId);
 
-    Page<ReadingRecordEntity> findByKnowledgeIid(Integer knowledgIid, Pageable pageable);
+    Page<ReadingRecordEntity> findByKnowledgeId(Integer knowledgId, Pageable pageable);
 }

@@ -20,54 +20,7 @@ public class CourseServiceImpl implements CourseService {
     private CourseEntityRepository courseEntityRepository;
 
     @Override
-    // 从formbean中获取数据，将其转换为entity，然后调用repository中的方法将entity存入数据库
-    public List<CourseForm> findAllCourse() throws ResourceNotFoundException {
-        List<CourseEntity> oldList = courseEntityRepository.findAll();
-        if (oldList == null) {
-            throw new ResourceNotFoundException("No class found!");
-        }
-        List<CourseForm> newList = new ArrayList<>();
-        for (int i = 0; i < oldList.size(); i++) {
-            CourseForm courseForm = new CourseForm();
-            courseForm.setIid(oldList.get(i).getId());
-            courseForm.setCourseId(oldList.get(i).getCourseBook());
-            courseForm.setCourseName(oldList.get(i).getCourseName());
-            courseForm.setCourseDescripiton(oldList.get(i).getCourseDescription());
-            courseForm.setCourseUsedBook(oldList.get(i).getCourseBook());
-            courseForm.setTeacherIid(oldList.get(i).getCourseTeacherId());
-            newList.add(courseForm);
-        }
-        return newList;
-    }
-
-    @Override
     public Integer createCourse(CourseEntity courseEntity) throws ResourceNotFoundException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createOneCourse'");
+        return null;
     }
-
-    @Override
-    public Integer deleteCourse(Integer id) throws ResourceNotFoundException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteOneCourse'");
-    }
-
-    @Override
-    public CourseForm findCourseById(Integer id) throws ResourceNotFoundException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findCourseByIid'");
-    }
-
-    @Override
-    public List<CourseForm> findCourse(CourseForm courseForm) throws ResourceNotFoundException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findCourse'");
-    }
-
-    @Override
-    public Integer updateOneCourse(CourseEntity courseEntity) throws ResourceNotFoundException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateOneCourse'");
-    }
-
 }

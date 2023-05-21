@@ -12,11 +12,9 @@ import java.util.List;
  */
 public interface CourseEntityRepository extends JpaRepository<CourseEntity, Integer> {
     // 根据课程编号查询
-    List<CourseEntity> findByCourseNumStringLike(String courseNumString);
+    CourseEntity findByCourseNum(String courseNum);
 
     // 根据课程名称查询
-    List<CourseEntity> findByCourseNameStringLike(String courseNameString);
+    CourseEntity findByCourseName(String courseName);
 
-    // 根据课程编号删除
-    void deleteById(String courseNum);
 }

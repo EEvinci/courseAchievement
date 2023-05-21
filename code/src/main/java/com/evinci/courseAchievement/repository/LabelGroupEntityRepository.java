@@ -12,11 +12,7 @@ import java.util.List;
  */
 public interface LabelGroupEntityRepository extends JpaRepository<LabelGroupEntity, Integer> {
     // 根据标签组编号查询
-    List<LabelGroupEntity> findByLabelGroupNumStringLike(String labelGroupNumString);
+    LabelGroupEntity findByLabelGroupNum(String labelGroupNum);
 
-    // 根据标签组内容查询
-    List<LabelGroupEntity> findByLabelGroupContentStringLike(String labelGroupContentsString);
 
-    // 根据标签组编号删除
-    void deleteById(String labelGroupNum);
 }

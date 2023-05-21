@@ -26,7 +26,7 @@ import java.util.Set;
 public class LabelGroupEntity {
   @Id
   @Column(name = "id")
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private int id;
 
   @Column(name = "label_group_num")
@@ -36,7 +36,7 @@ public class LabelGroupEntity {
   private String labelGroupContent;
 
   
-  @ManyToMany(mappedBy = "LabelGroupId")
+  @ManyToMany(mappedBy = "labelGroups")
   @Builder.Default
   private Set<LabelEntity> labels = new HashSet<>();
 
