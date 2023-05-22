@@ -34,6 +34,10 @@ public class KnowledgeEntity {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private int id;
 
+  // 知识点编号
+  @Column
+  private String knowledgeNum;
+
   // 知识点标题
   @Column(name = "knowledge_title", nullable = false)
   private String knowledgeTitle;

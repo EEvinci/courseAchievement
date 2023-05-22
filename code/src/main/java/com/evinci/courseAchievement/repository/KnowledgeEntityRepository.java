@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface KnowledgeEntityRepository extends JpaRepository<KnowledgeEntity, Integer> {
     // 根据知识点编号查询
-    KnowledgeEntity findByKnowledgeNumString(String knowledgeNum);
+    KnowledgeEntity findByKnowledgeNum(String knowledgeNum);
 
     // 根据知识点名称查询
     KnowledgeEntity findByKnowledgeTitle(String knowledgeTitle);

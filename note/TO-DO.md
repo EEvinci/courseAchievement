@@ -3,7 +3,7 @@
 ## 代码层面
 
 - [ ] controller中的repository转化为service, 要注意RESTful中的URI命名, 一定要是名词, 需要斟酌
-- [ ] formbean添加lombok注解（简单 - 提升级）
+- [ ] formbean添加lombok注解（简单 - 提升）
 - [ ] **redis配置**, 连接, 测试数据存储 - **impl中的cacheRedisService.java文件** - pom.xml文件中redis的配置
 - [ ] service中对方法的变量是formbean还是entity的考量, 以读操作和写操作为判断基准
 - [ ] impl接口完善, 在将entity转化为formbean时使用Builder注解的流式方法
@@ -53,7 +53,7 @@
    
      - 案例的形式可以是一道题, 一个实际的应用案例, 或者其他
    
-     - 所以案例应该也要分一下类别:
+     - **所以案例应该也要分一下类别:**
    
    - **知识点推荐**: 根据点赞数最高的进行推荐? 显然是有点粗暴和不合适的, 在现有的能力范围内应该至少要做一个**基于课程的知识点推荐**
    

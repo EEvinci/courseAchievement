@@ -16,7 +16,7 @@ import com.evinci.courseAchievement.service.UserService;
 public class UserServiceImpl implements UserService {
 
     @Override
-    public Integer addUser(UserEntity userEntity) throws ResourceNotFoundException {
+    public Integer addUser(UserForm userForm) throws ResourceNotFoundException {
         return null;
     }
 }
